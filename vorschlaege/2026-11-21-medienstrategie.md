@@ -1,6 +1,6 @@
 # Medienstrategie: Welche Kanäle für welche Marke?
 
-**Status:** angenommen am 21.11.2026, **Variante B** (Verleger: „Okay, wir nehmen Variante B … Jan Wachter noch einen TikTok-Account zusätzlich zum Insta-Account“) · erarbeitet von content-stratege, performance-analyst, den drei Markenleitungen und rechts-check · 21.11.2026
+**Status:** angenommen am 21.11.2026, **Variante B** (Verleger: „Okay, wir nehmen Variante B … Jan [Wachter] noch einen TikTok-Account zusätzlich zum Insta-Account“) · erarbeitet von content-stratege, performance-analyst, den drei Markenleitungen und rechts-check · 21.11.2026
 
 ## Was wir wissen (mit Quelle)
 

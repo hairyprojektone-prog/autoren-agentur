@@ -4,7 +4,7 @@ Was hier steht, gilt für alle Agenten, bis es durch einen neueren Eintrag erset
 
 ## 2026-11-21
 
-- **Medienstrategie Variante B freigegeben** (Verleger: „Okay, wir nehmen Variante B und gucken, dass Jan Wachter noch einen TikTok-Account zusätzlich zum Insta-Account bekommt. Das macht wirklich Sinn.“):
+- **Medienstrategie Variante B freigegeben** (Verleger: „Okay, wir nehmen Variante B und gucken, dass Jan [Wachter] noch einen TikTok-Account zusätzlich zum Insta-Account bekommt. Das macht wirklich Sinn.“):
   - Leif Hartmann: Instagram + Facebook-Seite
   - Sonja Dechert: Instagram + Facebook-Seite
   - Jan Wachter: Instagram + **TikTok** + Facebook-Seite
