@@ -82,7 +82,7 @@ Neu seit heute: Das Manuskript ist da. Deshalb kann das Buch **deutlich früher*
 | **7 · Zweite Welle** | **Warntag, voraussichtlich Do 09.09.2027** | Familien-Vorsorgewoche (Übung 3 im Buch) als zweite Challenge, Aktionspreis | Herbstgeschäft |
 | **8 · Winter** | ab Oktober 2027 | Anlass-Posts bei Wetter und Stromausfällen, 13.10. Tag der Katastrophenvorsorge | Saison |
 
-**Kanäle:** Instagram + Facebook-Seite. Später YouTube-Shorts möglich (Pack-Videos). TikTok optional.
+**Kanäle:** Instagram + **TikTok** + Facebook-Seite (beschlossen 21.11.2026, Variante B). Später YouTube-Shorts möglich (Pack-Videos).
 
 **Wenn das Gegenlesen nicht bis Ende Februar klappt:** Challenge läuft trotzdem, Buchstart verschiebt sich, notfalls auf den Warntag. Ohne Fachprüfung keine Veröffentlichung von Erste-Hilfe- und Sicherheitsratschlägen.
 

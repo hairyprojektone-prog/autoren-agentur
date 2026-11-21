@@ -43,7 +43,17 @@ Kein klarer Marktführer. Meiste Bewertungen: Sebastian Hein (~259). Lesekritik 
 
 ## Kanäle
 
-Noch keine. Empfehlung aus der Recherche: Konto 3–4 Monate vor Erscheinen aufbauen. Formate: 10-Wochen-Challenge, Mythos-Check, „Stunde 24 ohne Strom“, Pack-Videos, Rezepte aus dem Vorrat, Blackout-Probenacht.
+Beschlossen am 21.11.2026 (Medienstrategie Variante B). Alle Konten **getrennt** von Leif und Sonja (eigene E-Mail, keine Kontovorschläge, eigene Metricool-Marke).
+
+| Kanal | Handle | Stand |
+|---|---|---|
+| Instagram | Vorschlag @bereit.mit.jan | anzulegen bis 15.12.2026 |
+| TikTok | möglichst gleicher Name wie Instagram | anzulegen bis 15.12.2026 · Kernkanal neben Instagram (junge Eltern, Pack-Videos, Mythos-Checks, Challenge) |
+| Facebook-Seite | Jan Wachter · BEREIT. | anzulegen bis 15.12.2026, Reels gespiegelt |
+
+Anleitung: `anleitungen/konto-einrichten-jan.md`. Pinterest und YouTube Shorts frühestens ab März 2027 (Variante C).
+
+Empfehlung aus der Recherche: Konto 3–4 Monate vor Erscheinen aufbauen. Formate: 10-Wochen-Challenge, Mythos-Check, „Stunde 24 ohne Strom“, Pack-Videos, Rezepte aus dem Vorrat, Blackout-Probenacht.
 
 ## Zeitplan (Vorschlag Startkonzept 21.11.2026, Entscheidung offen)
 
@@ -52,7 +62,7 @@ Auftakt Instagram So 03.01.2027 · 10-Wochen-Challenge 04.01.–14.03. (folgt Ka
 ## Aktuelle Prioritäten
 
 1. Datenschutz-Funde im Manuskript beheben (echte E-Mail und Ort im Impressum, Personen-Erwähnung unter dem Titel)
-2. Konten einrichten (eigene E-Mail, Instagram, Facebook, Impressum-Service getrennt von Leif/Sonja)
+2. Konten einrichten (eigene E-Mail, Instagram, **TikTok**, Facebook, Impressum-Service getrennt von Leif/Sonja)
 3. Fachliches Gegenlesen organisieren (Anhang B)
 4. Gestaltung „BEREIT.“ (Cover, Piktogramme, ggf. Eichhörnchen)
 5. Challenge-Inhalte liegen bereit: `inhalte/vorrat/jan-wachter-start.md`

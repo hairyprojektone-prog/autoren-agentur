@@ -4,6 +4,12 @@ Was hier steht, gilt für alle Agenten, bis es durch einen neueren Eintrag erset
 
 ## 2026-11-21
 
+- **Medienstrategie Variante B freigegeben** (Verleger: „Okay, wir nehmen Variante B und gucken, dass Jan Wachter noch einen TikTok-Account zusätzlich zum Insta-Account bekommt. Das macht wirklich Sinn.“):
+  - Leif Hartmann: Instagram + Facebook-Seite
+  - Sonja Dechert: Instagram + Facebook-Seite
+  - Jan Wachter: Instagram + **TikTok** + Facebook-Seite
+  - Variante C (Pinterest, YouTube Shorts, TikTok-Test Sonja) erst ab März 2027 nach Zahlen, neue Vorlage nötig.
+
 - **Leif Hartmann: Buch-Launch heute** (Verleger: „Das Buch … ist überraschenderweise heute online gegangen. Also wir müssen jetzt reagieren mit dem Launch. Bitte passt es entsprechend alles an und starte die Instagram-Geschichten, die du vorhattest, für die Veröffentlichung.“) → Launch-Stories sind damit freigegeben und direkt eingeplant. Gilt nur für diese Launch-Posts; der Prüfmodus bleibt sonst aktiv.
 
 - **Startplan freigegeben** (Verleger: „dann starten wir los“):

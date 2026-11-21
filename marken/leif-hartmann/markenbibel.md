@@ -31,6 +31,9 @@ Launch laut Verleger: **21.11.2026** (Amazon nennt beim Taschenbuch den 18.11.20
 | Kanal | Handle | Stand |
 |---|---|---|
 | Instagram | @autorleifhartmann | aktiv, mit Metricool verbunden (Brand-ID 8206255) |
+| Facebook-Seite | Leif Hartmann · Autor | **anzulegen** (Variante B, 21.11.2026), Reels werden gespiegelt · Anleitung: `anleitungen/facebook-seite-leif.md` |
+
+Kein TikTok (Zielgruppe dort kaum vertreten).
 
 ## Bewährte Formate (aus den ersten Reels)
 
