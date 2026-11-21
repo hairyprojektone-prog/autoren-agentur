@@ -1,6 +1,26 @@
-# Wochenplan KW 48 (23.–29.11.2026) · Leif Hartmann · Instagram
+# Wochenplan KW 48 (21.–29.11.2026) · Leif Hartmann · Instagram · **Launch-Woche**
 
-Erstellt von: content-stratege, texter · Geprüft: markenwaechter · Modus: **Prüfmodus**
+Erstellt von: content-stratege, texter · Geprüft: markenwaechter · Aktualisiert 21.11.2026: **Launch-Fassung**
+
+> **Neu am 21.11.:** Laut Verleger ist das Buch heute online gegangen. Der Verleger hat die Launch-Stories direkt freigegeben („starte die Instagram-Geschichten … für die Veröffentlichung“). Darum sind die Posts unten direkt in Metricool eingeplant, nicht nur zur Prüfung.
+
+## Launch-Fahrplan (in Metricool, Brand 8206255)
+
+| Wann | Was | Medium (Drive) | Status |
+|---|---|---|---|
+| Sa 21.11., 12:30 | Story „ES IST DA! / It's here!“ | 02_freude_es-ist-da_cover.jpg | in Metricool, veröffentlicht automatisch |
+| Sa 21.11., 18:00 | Story „Ich bin Autor. Offiziell!“ | 04_freude_offiziell-autor_cover.jpg (Fassung aus „_alt“, inhaltlich gleich; die neue Fassung ist nicht per Link freigegeben) | in Metricool, veröffentlicht automatisch |
+| So 22.11., 19:00 | Reel „Wie viele davon kennst du?“ (vom Verleger, Video am 21.11. erneuert) | – | in Metricool · **englischer Link korrigiert** auf amazon.com/dp/B0HSC3YDYN |
+| Mo 23.11., 18:00 | Story-Umfrage „Wer liest bei euch Beziehungsbücher?“ (vorgezogen von Sa 28.11.) | 02-Cover als Hintergrund | in Metricool **ohne Auto-Veröffentlichung**: Der Verleger bekommt eine Erinnerung in der Metricool-App und setzt den Umfrage-Sticker von Hand (Sticker gehen über Metricool nicht automatisch) |
+| Di 24.11., 10:30 | Karussell „5 Sätze …“ (Post 1 unten) | fehlt noch | wartet auf Medien |
+| Do 26.11., 18:00 | Reel/Bild „Wir reden jeden Tag. Über Termine.“ (Post 2 unten) | fehlt noch | wartet auf Medien |
+
+**Zum Launch von Hand (nur in der Instagram-App möglich):**
+- In die beiden Launch-Stories einen **Link-Sticker** setzen: https://www.amazon.de/dp/B0HSCCNNC8 (Metricool kann keine Sticker setzen).
+- Stories danach als **Highlight „Buch“** anheften, damit neue Besucher sie dauerhaft sehen.
+- Bio und Links prüfen (Text steht in „00_LIES_MICH_captions_reihenfolge.txt“).
+
+---
 
 Ziel der Woche: Nach dem Nacht-Start einen ruhigen Rhythmus aufbauen (jeden zweiten Tag ein Post) und testen, ob 10–11 Uhr oder 18 Uhr besser funktioniert.
 
@@ -56,7 +76,7 @@ Status: Entwurf · geprüft ✅ (persönliche Aussage „Irgendwann habe ich gem
 
 ---
 
-## Post 3 · Sa 28.11., 10:00 · Story-Umfrage (kein Feed-Post)
+## Post 3 · ~~Sa 28.11., 10:00~~ → **Mo 23.11., 18:00** · Story-Umfrage (kein Feed-Post)
 **Medien-Vorschlag:** Buchcover
 
 Umfrage-Sticker: „Wer liest bei euch Beziehungsbücher?“ – „Ich“ / „Mein Partner“ / „Wir beide“ / „Keiner 😅“

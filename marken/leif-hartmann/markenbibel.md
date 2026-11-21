@@ -24,6 +24,8 @@ Stand: 21.11.2026 · Status: **veröffentlicht**
 | E-Book (DE) | Die vierzig Zentimeter zwischen uns | https://www.amazon.de/dp/B0HSBJN42R |
 | E-Book (EN) | Side by Side, Miles Apart | https://www.amazon.com/dp/B0HSC3YDYN |
 
+Launch laut Verleger: **21.11.2026** (Amazon nennt beim Taschenbuch den 18.11.2026 als Erscheinungsdatum).
+
 ## Kanäle
 
 | Kanal | Handle | Stand |

@@ -4,6 +4,8 @@ Was hier steht, gilt für alle Agenten, bis es durch einen neueren Eintrag erset
 
 ## 2026-11-21
 
+- **Leif Hartmann: Buch-Launch heute** (Verleger: „Das Buch … ist überraschenderweise heute online gegangen. Also wir müssen jetzt reagieren mit dem Launch. Bitte passt es entsprechend alles an und starte die Instagram-Geschichten, die du vorhattest, für die Veröffentlichung.“) → Launch-Stories sind damit freigegeben und direkt eingeplant. Gilt nur für diese Launch-Posts; der Prüfmodus bleibt sonst aktiv.
+
 - **Startplan freigegeben** (Verleger: „dann starten wir los“):
   - Sonja Dechert: Band 1 Di 12.01.2027, Band 2 Di 09.02.2027, Band 3 Mo 08.03.2027
   - Jan Wachter: Auftakt So 03.01.2027, 10-Wochen-Challenge 04.01.–14.03., Buchstart Di 16.03.2027, zweite Welle Warntag. Voraussetzung bleibt das fachliche Gegenlesen.
