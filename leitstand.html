@@ -1,0 +1,246 @@
+<title>Agentur-Leitstand</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: control-room page; summary strip, live org board (clickable agents), weekly flow, open decisions */
+:root{
+  --bg:#F3F5F8; --surface:#FFFFFF; --ink:#152038; --muted:#5B6579; --line:#D8DDE6;
+  --accent:#2B5F8A; --accent-soft:#E2EBF4;
+  --leif:#3D6E9E; --leif-soft:#E4EDF6; --sonja:#A3456B; --sonja-soft:#F6E6ED; --jan:#5F7134; --jan-soft:#ECF0E1;
+  --done:#2E7D4F; --done-soft:#E1F2E7; --ready:#6B7487; --ready-soft:#ECEEF2; --wait:#A86A00; --wait-soft:#FBEFD6;
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif; --f-body:"Inter",system-ui,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1420; --surface:#162032; --ink:#E6EBF3; --muted:#9AA4B8; --line:#29344D;
+  --accent:#80B1DC; --accent-soft:#1C2C44;
+  --leif:#86B3DE; --leif-soft:#1B2A3F; --sonja:#E08AAE; --sonja-soft:#391F2F; --jan:#B3C77D; --jan-soft:#252D19;
+  --done:#6FCB95; --done-soft:#16301F; --ready:#A3ABBD; --ready-soft:#222B3D; --wait:#E8B04A; --wait-soft:#35280F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1420; --surface:#162032; --ink:#E6EBF3; --muted:#9AA4B8; --line:#29344D;
+  --accent:#80B1DC; --accent-soft:#1C2C44;
+  --leif:#86B3DE; --leif-soft:#1B2A3F; --sonja:#E08AAE; --sonja-soft:#391F2F; --jan:#B3C77D; --jan-soft:#252D19;
+  --done:#6FCB95; --done-soft:#16301F; --ready:#A3ABBD; --ready-soft:#222B3D; --wait:#E8B04A; --wait-soft:#35280F; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 4rem}
+.wrap{max-width:76rem;margin:0 auto;display:grid;gap:2.5rem}
+h1,h2,h3{font-family:var(--f-display);margin:0;line-height:1.15;text-wrap:balance}
+h1{font-size:clamp(2rem,4.5vw,3rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:800}
+h3{font-size:1rem;font-weight:600}
+p{margin:0}
+.eyebrow{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.muted{color:var(--muted)}
+header{padding-top:2.5rem;display:grid;gap:.8rem}
+header .lead{color:var(--muted);font-size:1.08rem;max-width:46rem}
+
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(10.5rem,1fr));gap:.7rem}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem;display:grid;gap:.15rem}
+.kpi b{font-family:var(--f-display);font-size:2rem;font-weight:800;font-variant-numeric:tabular-nums;line-height:1}
+.kpi span{font-size:.85rem;color:var(--muted)}
+
+.legend{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;font-size:.85rem;color:var(--muted)}
+.legend i{display:inline-block;width:.7rem;height:.7rem;border-radius:50%;margin-right:.35rem;vertical-align:-.05rem}
+.legend .d i{background:var(--done)} .legend .r i{background:var(--ready)} .legend .w i{background:var(--wait)}
+
+.board{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.3rem;display:grid;gap:1rem}
+.tier{display:flex;justify-content:center;gap:.7rem;flex-wrap:wrap}
+.flowline{width:2px;height:16px;background:var(--line);margin:0 auto}
+.tier-label{text-align:center;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.you{background:var(--ink);color:var(--bg);border-radius:10px;padding:.7rem 1.4rem;text-align:center}
+.you b{font-family:var(--f-display);font-size:1.05rem;display:block}
+.you span{font-size:.8rem;opacity:.8}
+.depts{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:.8rem}
+.dept{border:1px solid var(--line);border-radius:10px;padding:.8rem;display:grid;gap:.5rem;align-content:start;background:var(--bg)}
+.dept h3{font-size:.95rem}
+.agents{display:grid;gap:.4rem}
+button.agent{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;gap:.55rem;padding:.5rem .65rem;border-radius:8px;background:var(--surface);border:1.5px solid var(--line);font-size:.88rem;min-width:0}
+button.agent:hover{border-color:var(--accent)}
+button.agent:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button.agent[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+button.agent .dot{width:.65rem;height:.65rem;border-radius:50%;flex:none}
+button.agent .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500}
+button.agent .st{font-family:var(--f-mono);font-size:.66rem;color:var(--muted);white-space:nowrap}
+.s-done .dot{background:var(--done)} .s-ready .dot{background:var(--ready)} .s-wait .dot{background:var(--wait)}
+.brand-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.7rem}
+.brand-row button.agent{padding:.7rem .8rem}
+.brand-row .leif{border-color:var(--leif);background:var(--leif-soft)}
+.brand-row .sonja{border-color:var(--sonja);background:var(--sonja-soft)}
+.brand-row .jan{border-color:var(--jan);background:var(--jan-soft)}
+.ceo-btn{border-color:var(--accent)!important;background:var(--accent-soft)!important;padding:.7rem 1.2rem!important;font-size:.95rem!important}
+
+.detail{border-radius:12px;border:1.5px solid var(--accent);background:var(--surface);padding:1.1rem 1.2rem;display:grid;gap:.6rem}
+.detail .row{display:flex;flex-wrap:wrap;gap:.4rem .8rem;align-items:baseline}
+.pill{font-family:var(--f-mono);font-size:.7rem;padding:.15rem .55rem;border-radius:99px}
+.pill.done{background:var(--done-soft);color:var(--done)} .pill.ready{background:var(--ready-soft);color:var(--ready)} .pill.wait{background:var(--wait-soft);color:var(--wait)}
+.detail dl{margin:0;display:grid;grid-template-columns:8.5rem 1fr;gap:.35rem 1rem;font-size:.92rem}
+.detail dt{color:var(--muted)} .detail dd{margin:0;min-width:0}
+@media (max-width:560px){.detail dl{grid-template-columns:1fr}.detail dt{margin-top:.4rem}}
+
+.week{display:grid;grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));gap:.6rem}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.9rem;display:grid;gap:.4rem;align-content:start}
+.day .when{font-family:var(--f-mono);font-size:.72rem;color:var(--accent)}
+.day b{font-family:var(--f-display);font-size:1rem}
+.day p{font-size:.85rem;color:var(--muted)}
+.day.you-day{border-color:var(--ink)}
+
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:.5rem;counter-reset:f}
+.fstep{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.9rem;display:grid;gap:.3rem}
+.fstep::before{counter-increment:f;content:"Schritt " counter(f);font-family:var(--f-mono);font-size:.68rem;color:var(--accent)}
+.fstep b{font-family:var(--f-display)} .fstep p{font-size:.85rem;color:var(--muted)}
+
+.decisions{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:.8rem}
+.dec{background:var(--surface);border:1.5px solid var(--wait);border-radius:12px;padding:1rem 1.1rem;display:grid;gap:.45rem;align-content:start}
+.dec .tag{font-family:var(--f-mono);font-size:.7rem;color:var(--wait)}
+.dec p{font-size:.9rem}
+.dec .ans{font-size:.85rem;color:var(--muted)}
+
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(20rem,1fr));gap:1rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.1rem 1.2rem;display:grid;gap:.6rem;align-content:start}
+.card ul{margin:0;padding-left:1.1rem;display:grid;gap:.35rem;font-size:.9rem}
+.sep{display:grid;grid-template-columns:1fr auto 1fr;gap:.8rem;align-items:stretch}
+.sep .side{border-radius:12px;padding:1rem;display:grid;gap:.4rem;align-content:start}
+.sep .gh{background:var(--accent-soft)} .sep .dr{background:var(--sonja-soft)}
+.sep .mid{display:grid;place-items:center;font-family:var(--f-mono);font-size:.75rem;color:var(--muted);text-align:center}
+.sep ul{margin:0;padding-left:1.1rem;font-size:.88rem;display:grid;gap:.25rem}
+@media (max-width:640px){.sep{grid-template-columns:1fr}.sep .mid{padding:.2rem}}
+footer{font-size:.82rem;color:var(--muted)}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Leitstand · KW 47 · Stand 21.11.2026</div>
+  <h1>Dein Team bei der Arbeit</h1>
+  <p class="lead">22 Agenten arbeiten für deine drei Pseudonyme. Hier siehst du, wer was macht, was diese Woche erledigt wurde und wo das Team auf dich wartet. Tippe auf einen Agenten, um seine Arbeit zu sehen.</p>
+</header>
+
+<div class="strip">
+  <div class="kpi"><b>22</b><span>Agenten im Team</span></div>
+  <div class="kpi"><b id="k-done">0</b><span>haben diese Woche geliefert</span></div>
+  <div class="kpi"><b>3</b><span>Entscheidungen warten auf dich</span></div>
+  <div class="kpi"><b>3</b><span>Posts für KW 48 geschrieben</span></div>
+  <div class="kpi"><b>19</b><span>Konkurrenztitel im Blick</span></div>
+</div>
+
+<section style="display:grid;gap:1rem">
+  <div style="display:grid;gap:.5rem">
+    <div class="eyebrow">Organigramm</div>
+    <h2>Wer arbeitet für dich</h2>
+    <div class="legend"><span class="d"><i></i>diese Woche geliefert</span><span class="w"><i></i>wartet auf dich oder auf Material</span><span class="r"><i></i>bereit, startet nach Plan</span></div>
+  </div>
+  <div class="board" id="board">
+    <div class="tier"><div class="you"><b>Du</b><span>Verleger · entscheidet</span></div></div>
+    <div class="flowline"></div>
+    <div class="tier" id="tier-ceo"></div>
+    <div class="flowline"></div>
+    <div class="tier-label">Markenleitungen</div>
+    <div class="brand-row" id="tier-brands"></div>
+    <div class="flowline"></div>
+    <div class="tier-label">Fachabteilungen · arbeiten für alle drei Marken</div>
+    <div class="depts" id="tier-depts"></div>
+  </div>
+  <div class="detail" id="detail" aria-live="polite"></div>
+</section>
+
+<section style="display:grid;gap:1rem">
+  <div style="display:grid;gap:.5rem"><div class="eyebrow">Der Wochenzyklus</div><h2>So entsteht dein Montagsbericht</h2></div>
+  <div class="flow">
+    <div class="fstep"><b>Ziele setzen</b><p>Die drei Markenleitungen legen je bis zu 3 Wochenziele fest.</p></div>
+    <div class="fstep"><b>Markt beobachten</b><p>Radar, Detektiv und Scout prüfen Konkurrenz, Rezensionen und Anlässe.</p></div>
+    <div class="fstep"><b>Zahlen messen</b><p>Der Analyst holt die Instagram-Zahlen aus Metricool.</p></div>
+    <div class="fstep"><b>Planen und schreiben</b><p>Stratege und Texter bauen den Wochenplan, der Markenwächter prüft jeden Post.</p></div>
+    <div class="fstep"><b>Markenberichte</b><p>Jede Marke bekommt einen Ampelstatus.</p></div>
+    <div class="fstep"><b>CEO-Bericht</b><p>Eine Seite für dich: Lage, Erkenntnisse, höchstens 3 Entscheidungen.</p></div>
+  </div>
+</section>
+
+<section style="display:grid;gap:1rem">
+  <div style="display:grid;gap:.5rem"><div class="eyebrow">Arbeitsrhythmus</div><h2>Deine Woche mit dem Team</h2></div>
+  <div class="week">
+    <div class="day you-day"><span class="when">Montag</span><b>Bericht kommt</b><p>Wochenzyklus läuft, danach liegt der CEO-Bericht bereit. Du antwortest mit „Ja“ oder „Nein“.</p></div>
+    <div class="day"><span class="when">Täglich morgens</span><b>Marketing-Schicht</b><p>Anlässe suchen, Posts prüfen und in Metricool einplanen, Kommentare sichten.</p></div>
+    <div class="day"><span class="when">Monatsanfang</span><b>Monatszyklus</b><p>Monatsplan, Amazon-Seiten, Aktionen, Lektorat, Zahlen aus deinem KDP-Bericht.</p></div>
+    <div class="day"><span class="when">Quartal</span><b>Strategie</b><p>Fakten in den Büchern prüfen, neue Buchideen, Kurs fürs nächste Quartal.</p></div>
+    <div class="day"><span class="when">Jederzeit</span><b>Notfall</b><p>Bei Krisen-Nachrichten, 1-Stern-Welle oder Shitstorm bekommst du sofort Bescheid.</p></div>
+  </div>
+</section>
+
+<section style="display:grid;gap:1rem">
+  <div style="display:grid;gap:.5rem"><div class="eyebrow">Wartet auf dich</div><h2>Deine 3 Entscheidungen aus dem CEO-Bericht</h2></div>
+  <div class="decisions">
+    <div class="dec"><span class="tag">Sonja Dechert</span><h3>Startplan der Reihe</h3><p>Band 1 am 12.01., Band 2 am 09.02. (vor Valentinstag), Band 3 am 08.03. (Weltfrauentag). Instagram-Konto bis Ende November.</p><span class="ans">Antwort: „Ja“ oder andere Termine</span></div>
+    <div class="dec"><span class="tag">Jan Wachter</span><h3>Zeitplan der Marke</h3><p>Instagram-Start am 03.01.2027 (Jahrestag Berliner Blackout) mit 10-Wochen-Challenge, Buch im September 2027. Optional vorher ein kurzes Arbeitsheft.</p><span class="ans">Antwort: „Ja“, „Ja, mit Arbeitsheft“ oder „Nein“</span></div>
+    <div class="dec"><span class="tag">Leif Hartmann</span><h3>Leserteam und Impressum</h3><p>10–15 kostenlose E-Books gegen ehrliche Rezensionen, Ziel 20 bis Ende Januar. Impressum-Service für das Instagram-Konto.</p><span class="ans">Antwort: „Ja“ oder „Nein“</span></div>
+  </div>
+</section>
+
+<section style="display:grid;gap:1rem">
+  <div style="display:grid;gap:.5rem"><div class="eyebrow">Getrennte Bereiche</div><h2>Agentur und Kreativabteilung</h2></div>
+  <div class="sep">
+    <div class="side gh"><h3>Agentur · GitHub</h3><ul><li>Stellenbeschreibungen der 22 Agenten</li><li>Markenbibeln, Erkenntnis-Logs, Konkurrenz</li><li>CEO- und Abteilungsberichte</li><li>Vorschläge und geplante Posts</li></ul></div>
+    <div class="mid">liest nur →<br>← schlägt vor</div>
+    <div class="side dr"><h3>Kreativabteilung · Google Drive</h3><ul><li>Manuskripte aller Bücher</li><li>Cover und Umschläge</li><li>Reels, Bilder, Medien</li><li>Wird von der Agentur nie verändert</li></ul></div>
+  </div>
+</section>
+
+<section class="split">
+  <div class="card"><div class="eyebrow">Wichtigste Erkenntnisse KW 47</div>
+    <ul>
+      <li>5 von 6 Start-Reels gingen in 20 Minuten nachts raus. Ab jetzt gilt höchstens 1 Post pro Tag, um 10–11 oder um 18 Uhr.</li>
+      <li>Leifs Marktlücke: Kein anderes Buch erzählt die leise Ehe aus der Ich-Sicht eines Mannes.</li>
+      <li>Wechseljahre-Bücher 2026 kommen fast nur von Ärztinnen. Sonjas Platz ist „Freundin statt Ärztin“.</li>
+      <li>Der Name „Jan Wachter“ ist frei.</li>
+    </ul></div>
+  <div class="card"><div class="eyebrow">Nächste Woche</div>
+    <ul>
+      <li>Reichweite der ersten 7 Reels auswerten</li>
+      <li>Amazon-Seite von Leif prüfen (Beschreibung, Schlüsselwörter)</li>
+      <li>Bestsellerränge und Rezensionen der Konkurrenz direkt auf Amazon erfassen</li>
+      <li>Liste passender Podcasts und Facebook-Gruppen für Leif und Sonja</li>
+    </ul></div>
+</section>
+
+<footer>Quelle: Repository „autoren-agentur“, CEO-Bericht KW 47, Abteilungsberichte vom 21.11.2026. Zahlen aus Metricool (Abruf 21.11.2026).</footer>
+</div>
+
+<script>
+const A=[
+ {id:"ceo",n:"CEO",g:"ceo",s:"done",job:"Setzt Prioritäten und berichtet nur dir.",did:"Erster CEO-Bericht KW 47 mit Lage, 3 Erkenntnissen und 3 Entscheidungen. Vorrang: Leif Hartmann.",next:"Montag: Wochenbericht KW 48",out:"berichte/ceo/2026-KW47.md"},
+ {id:"ml-leif",n:"Markenleitung Leif Hartmann",g:"brand",b:"leif",s:"done",job:"Hütet Stimme und Strategie von Leif.",did:"Markenbibel angelegt. Wochenziel: ruhiger Posting-Rhythmus und erste Rezensionen.",next:"Wochenziele KW 48 prüfen",out:"marken/leif-hartmann/markenbibel.md"},
+ {id:"ml-sonja",n:"Markenleitung Sonja Dechert",g:"brand",b:"sonja",s:"wait",job:"Hütet Stimme und Strategie von Sonja.",did:"Markenbibel aus deinen Drive-Unterlagen erstellt. Startplan vorbereitet.",next:"Wartet auf deine Entscheidung zum Startplan",out:"marken/sonja-dechert/markenbibel.md"},
+ {id:"ml-jan",n:"Markenleitung Jan Wachter",g:"brand",b:"jan",s:"wait",job:"Hütet die Marke Jan Wachter, streng getrennt von den anderen.",did:"Markenbibel aus der Krisenvorsorge-Recherche erstellt. Name geprüft: frei.",next:"Wartet auf deine Entscheidung zum Zeitplan",out:"marken/jan-wachter/markenbibel.md"},
+ {id:"radar",n:"Konkurrenz-Radar",g:"Marktforschung",s:"done",job:"Beobachtet die wichtigsten Konkurrenztitel und meldet Veränderungen.",did:"19 Konkurrenztitel für alle drei Marken erfasst, neue Wechseljahre-Bücher 2026 gefunden.",next:"Bestsellerränge direkt auf Amazon",out:"marken/*/konkurrenz.md"},
+ {id:"detektiv",n:"Rezensions-Detektiv",g:"Marktforschung",s:"done",job:"Macht aus schlechten Konkurrenz-Rezensionen Verkaufsargumente.",did:"Leser-Kritik am Krisenvorsorge-Markt übernommen. Leifs Buch noch ohne Rezensionen.",next:"1–3-Sterne-Rezensionen der Top-5 lesen",out:"berichte/abteilungen/2026-11-21-erster-zyklus.md"},
+ {id:"scout",n:"Trend- und Anlass-Scout",g:"Marktforschung",s:"done",job:"Sucht täglich Anlässe für Posts.",did:"Blackout-Krisenplan der Bundesnetzagentur gefunden. Großer Anlass für Jan: 3. Januar.",next:"Tägliche Suche",out:"berichte/abteilungen/2026-11-21-erster-zyklus.md"},
+ {id:"stratege",n:"Content-Stratege",g:"Marketing-Maschine",s:"done",job:"Plant Themen und Wochenpläne.",did:"Wochenplan KW 48 für Leif mit Test „Vormittag gegen Abend“.",next:"Monatsplan Dezember",out:"inhalte/geplant/2026-KW48-leif-hartmann.md"},
+ {id:"texter",n:"Texter & Reel-Autor",g:"Marketing-Maschine",s:"done",job:"Schreibt Captions und Reel-Skripte.",did:"2 Posts und 1 Story-Umfrage für Leif, zweisprachig DE/EN.",next:"Posts für KW 49",out:"inhalte/geplant/2026-KW48-leif-hartmann.md"},
+ {id:"pub",n:"Veröffentlicher",g:"Marketing-Maschine",s:"wait",job:"Plant geprüfte Posts in Metricool zur besten Zeit ein.",did:"Beste Zeiten aus Metricool geholt: werktags 10–12 und 18 Uhr.",next:"Wartet auf Bilder aus der Kreativabteilung",out:"–"},
+ {id:"community",n:"Community-Manager",g:"Marketing-Maschine",s:"ready",job:"Bereitet Antworten auf Kommentare vor und meldet heikle Nachrichten.",did:"Startbereit mit deinen Antwortvorlagen.",next:"Tägliche Schicht",out:"–"},
+ {id:"analyst",n:"Performance-Analyst",g:"Marketing-Maschine",s:"done",job:"Misst, was funktioniert.",did:"Erste Instagram-Zahlen erfasst und Nacht-Posting als Problem erkannt.",next:"Auswertung der ersten 7 Reels",out:"marken/leif-hartmann/erkenntnis-log.md"},
+ {id:"listing",n:"Listing-Optimierer",g:"Amazon-Shop",s:"ready",job:"Verbessert Amazon-Seiten, Schlüsselwörter und Kategorien.",did:"Eingeplant.",next:"Leifs Amazon-Seite prüfen",out:"–"},
+ {id:"aktion",n:"Preis- & Aktionsplaner",g:"Amazon-Shop",s:"done",job:"Plant Buchstarts und Preisaktionen.",did:"Gestaffelten Startplan für Sonjas Reihe ausgearbeitet.",next:"Aktionskalender Dezember",out:"vorschlaege/2026-11-21-sonja-startplan.md"},
+ {id:"aktuell",n:"Aktualitäts-Wächter",g:"Buch-Werkstatt",s:"ready",job:"Prüft Fakten in den Büchern auf den neuesten Stand.",did:"Bereit.",next:"Quartalsprüfung im Januar",out:"–"},
+ {id:"lektor",n:"Lektor",g:"Buch-Werkstatt",s:"ready",job:"Macht aus Leserkritik konkrete Textvorschläge.",did:"Bereit. Wartet auf erste Rezensionen.",next:"Monatszyklus Dezember",out:"–"},
+ {id:"produkt",n:"Produktplaner",g:"Buch-Werkstatt",s:"ready",job:"Sucht neue Bücher und Formate.",did:"Ideen gesammelt: Paket „Seine Sicht, ihre Sicht“, Arbeitsheft für Jan.",next:"Quartalsbewertung im Januar",out:"–"},
+ {id:"newsletter",n:"Newsletter & Lesergeschenk",g:"Leserbindung",s:"ready",job:"Baut E-Mail-Listen mit Gratis-Geschenken auf.",did:"Bereit.",next:"Konzept Lesergeschenke",out:"–"},
+ {id:"leserteam",n:"Leserteam & Kooperationen",g:"Leserbindung",s:"wait",job:"Organisiert Vorab-Leser und findet Partner.",did:"Leserteam-Plan für Leif vorbereitet.",next:"Wartet auf deine Entscheidung; dann Podcast-Liste",out:"vorschlaege/2026-11-21-leif-rezensionen-impressum.md"},
+ {id:"waechter",n:"Markenwächter",g:"Recht & Controlling",s:"done",job:"Prüft jeden Post vor der Veröffentlichung.",did:"3 Posts geprüft. Falschen Englisch-Link in 2 Reels gefunden.",next:"Tägliche Prüfung",out:"inhalte/geplant/2026-KW48-leif-hartmann.md"},
+ {id:"recht",n:"Rechts-Check",g:"Recht & Controlling",s:"done",job:"Achtet auf Impressum, Amazon-Regeln und Gesundheitsaussagen.",did:"Impressum für Instagram fehlt, KI-Angabe bei KDP beachten.",next:"Monatsprüfung",out:"berichte/abteilungen/2026-11-21-erster-zyklus.md"},
+ {id:"controller",n:"Controller",g:"Recht & Controlling",s:"wait",job:"Wertet deine KDP-Verkaufsberichte aus.",did:"Noch kein KDP-Bericht vorhanden (Buch seit 20.11. erhältlich).",next:"Wartet auf KDP-Bericht Dezember (Anfang Januar)",out:"–"}
+];
+const SL={done:"geliefert",ready:"bereit",wait:"wartet"};
+const depts=["Marktforschung","Marketing-Maschine","Amazon-Shop","Buch-Werkstatt","Leserbindung","Recht & Controlling"];
+function btn(a,extra=""){const b=document.createElement("button");b.className=`agent s-${a.s} ${extra}`;b.type="button";b.id="a-"+a.id;b.setAttribute("aria-pressed","false");
+ b.innerHTML=`<span class="dot"></span><span class="nm">${a.n}</span><span class="st">${SL[a.s]}</span>`;b.addEventListener("click",()=>show(a.id));return b}
+document.getElementById("tier-ceo").append(btn(A[0],"ceo-btn"));
+const br=document.getElementById("tier-brands");A.filter(a=>a.g==="brand").forEach(a=>br.append(btn(a,a.b)));
+const td=document.getElementById("tier-depts");
+depts.forEach(d=>{const box=document.createElement("div");box.className="dept";box.innerHTML=`<h3>${d}</h3>`;const list=document.createElement("div");list.className="agents";
+ A.filter(a=>a.g===d).forEach(a=>list.append(btn(a)));box.append(list);td.append(box)});
+document.getElementById("k-done").textContent=A.filter(a=>a.s==="done").length;
+function show(id){const a=A.find(x=>x.id===id);document.querySelectorAll("button.agent").forEach(b=>b.setAttribute("aria-pressed",b.id==="a-"+id?"true":"false"));
+ const grp=a.g==="ceo"?"Führung":a.g==="brand"?"Markenleitung":a.g;
+ document.getElementById("detail").innerHTML=`<div class="row"><h3 style="font-size:1.15rem">${a.n}</h3><span class="pill ${a.s}">${SL[a.s]}</span><span class="muted" style="font-size:.85rem">${grp}</span></div>
+ <dl><dt>Aufgabe</dt><dd>${a.job}</dd><dt>Diese Woche</dt><dd>${a.did}</dd><dt>Als Nächstes</dt><dd>${a.next}</dd><dt>Ergebnis-Datei</dt><dd style="font-family:var(--f-mono);font-size:.8rem;overflow-wrap:anywhere">${a.out}</dd></dl>`}
+show("ceo");
+</script>

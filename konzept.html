@@ -1,0 +1,522 @@
+<title>Autoren-Agentur Bauplan</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: one reading column (~74rem) of stacked chapters; org chart and loop as wide figures */
+:root{
+  --bg:#F4F6F8; --surface:#FFFFFF; --ink:#16213A; --muted:#5A6478; --line:#D9DEE6;
+  --accent:#2B5F8A; --accent-soft:#E3ECF4;
+  --leif:#3D6E9E; --leif-soft:#E4EDF6;
+  --sonja:#A3456B; --sonja-soft:#F6E6ED;
+  --kris:#5F7134; --kris-soft:#ECF0E1;
+  --green:#2E7D4F; --green-soft:#E2F2E8;
+  --amber:#A86A00; --amber-soft:#FBF0D9;
+  --red:#B23A3A; --red-soft:#F8E3E3;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0F1522; --surface:#172033; --ink:#E7ECF4; --muted:#9AA5BA; --line:#2A3550;
+  --accent:#7FB0DB; --accent-soft:#1D2D45;
+  --leif:#86B3DE; --leif-soft:#1C2B40;
+  --sonja:#E08AAE; --sonja-soft:#3A2030;
+  --kris:#B3C77D; --kris-soft:#262E1A;
+  --green:#6FCB95; --green-soft:#17301F;
+  --amber:#E8B04A; --amber-soft:#36290F;
+  --red:#EC8A8A; --red-soft:#3A1C1C;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0F1522; --surface:#172033; --ink:#E7ECF4; --muted:#9AA5BA; --line:#2A3550;
+  --accent:#7FB0DB; --accent-soft:#1D2D45;
+  --leif:#86B3DE; --leif-soft:#1C2B40;
+  --sonja:#E08AAE; --sonja-soft:#3A2030;
+  --kris:#B3C77D; --kris-soft:#262E1A;
+  --green:#6FCB95; --green-soft:#17301F;
+  --amber:#E8B04A; --amber-soft:#36290F;
+  --red:#EC8A8A; --red-soft:#3A1C1C;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:0 4rem}
+.wrap{max-width:74rem;margin:0 auto}
+h1,h2,h3,h4{font-family:var(--f-display);line-height:1.15;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;letter-spacing:-.01em}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0}
+.lead{font-size:1.15rem;color:var(--muted);max-width:44rem}
+.eyebrow{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+section{padding-block:3.5rem 0;display:grid;gap:1.5rem}
+.sec-head{display:grid;gap:.6rem;max-width:48rem}
+
+/* hero */
+.hero{padding-block:3.5rem 1rem;display:grid;gap:1.2rem;border-bottom:1px solid var(--line)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;color:var(--muted);font-size:.9rem}
+.hero .meta b{color:var(--ink);font-weight:600}
+
+/* principles */
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem}
+.principle{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.3rem;display:grid;gap:.5rem;align-content:start}
+.principle .k{font-family:var(--f-mono);font-size:.8rem;color:var(--accent)}
+.principle p{color:var(--muted);font-size:.95rem}
+
+/* org chart */
+.org{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.5rem;display:grid;gap:1.1rem;overflow-x:auto}
+.org-row{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap}
+.node{border:1.5px solid var(--line);border-radius:8px;padding:.6rem .9rem;background:var(--bg);text-align:center;min-width:9rem}
+.node b{display:block;font-family:var(--f-display);font-size:1rem}
+.node span{font-size:.8rem;color:var(--muted)}
+.node.you{border-color:var(--ink);background:var(--ink);color:var(--bg)}
+.node.you span{color:var(--bg);opacity:.75}
+.node.ceo{border-color:var(--accent);background:var(--accent-soft)}
+.node.leif{border-color:var(--leif);background:var(--leif-soft)}
+.node.sonja{border-color:var(--sonja);background:var(--sonja-soft)}
+.node.kris{border-color:var(--kris);background:var(--kris-soft)}
+.connector{height:18px;width:2px;background:var(--line);margin:0 auto}
+.org-label{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center}
+.cluster{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center;align-items:stretch}
+.pair{border:1.5px dashed var(--line);border-radius:10px;padding:.6rem;display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;position:relative}
+.pair .tag{position:absolute;top:-.7rem;left:50%;transform:translateX(-50%);background:var(--surface);padding:0 .4rem;font-size:.72rem;color:var(--muted);white-space:nowrap}
+.depts{display:grid;grid-template-columns:repeat(auto-fit,minmax(10.5rem,1fr));gap:.6rem}
+.dept-node{border-radius:8px;padding:.6rem .8rem;border:1.5px solid var(--line);background:var(--bg)}
+.dept-node b{font-family:var(--f-display);font-size:.95rem;display:block}
+.dept-node span{font-size:.78rem;color:var(--muted)}
+.dept-node.star{border-color:var(--accent);background:var(--accent-soft)}
+
+/* departments */
+.dept{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.4rem;display:grid;gap:1rem}
+.dept-top{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:baseline;justify-content:space-between}
+.dept-top p{color:var(--muted);max-width:46rem}
+.agents{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:.7rem}
+.agent{border-top:2px solid var(--line);padding-top:.7rem;display:grid;gap:.3rem;min-width:0}
+.agent h4{font-size:1rem;font-weight:700}
+.agent p{font-size:.92rem;color:var(--muted)}
+.agent .rh{font-family:var(--f-mono);font-size:.72rem;color:var(--accent)}
+.pill{display:inline-block;font-family:var(--f-mono);font-size:.72rem;padding:.15rem .55rem;border-radius:99px;background:var(--accent-soft);color:var(--accent);white-space:nowrap}
+
+/* loop */
+.loop{display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:.6rem;counter-reset:step}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1rem;display:grid;gap:.35rem;align-content:start;position:relative}
+.step::before{counter-increment:step;content:counter(step);font-family:var(--f-mono);font-size:.75rem;color:var(--accent)}
+.step b{font-family:var(--f-display);font-size:1.05rem}
+.step p{font-size:.88rem;color:var(--muted)}
+.loop-note{font-size:.92rem;color:var(--muted);border-left:3px solid var(--accent);padding-left:.9rem;max-width:50rem}
+
+/* imprint strategies */
+.imprints{display:grid;grid-template-columns:repeat(auto-fit,minmax(19rem,1fr));gap:1rem}
+.imp{border-radius:12px;padding:1.3rem;border:1.5px solid var(--line);background:var(--surface);display:grid;gap:.8rem;align-content:start}
+.imp.leif{border-color:var(--leif)} .imp.sonja{border-color:var(--sonja)} .imp.kris{border-color:var(--kris)}
+.imp .st{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+.imp.leif .st{color:var(--leif)} .imp.sonja .st{color:var(--sonja)} .imp.kris .st{color:var(--kris)}
+.imp ul{margin:0;padding-left:1.1rem;display:grid;gap:.35rem;font-size:.93rem}
+.imp .why{font-size:.88rem;color:var(--muted)}
+
+/* rhythm table */
+.tbl-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:40rem;font-size:.93rem}
+th,td{text-align:left;padding:.75rem 1rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:600;white-space:nowrap}
+
+/* ampel */
+.ampel{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1rem}
+.lvl{border-radius:12px;padding:1.2rem;display:grid;gap:.6rem;align-content:start}
+.lvl.g{background:var(--green-soft)} .lvl.y{background:var(--amber-soft)} .lvl.r{background:var(--red-soft)}
+.lvl h3{display:flex;align-items:center;gap:.5rem}
+.dot{width:.8rem;height:.8rem;border-radius:50%;flex:none}
+.g .dot{background:var(--green)} .y .dot{background:var(--amber)} .r .dot{background:var(--red)}
+.lvl ul{margin:0;padding-left:1.1rem;display:grid;gap:.3rem;font-size:.92rem}
+.lvl .who{font-size:.85rem;font-weight:600}
+.g .who{color:var(--green)} .y .who{color:var(--amber)} .r .who{color:var(--red)}
+
+/* report mock */
+.report{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.5rem;display:grid;gap:1.1rem;max-width:52rem}
+.report-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem;border-bottom:1px solid var(--line);padding-bottom:.8rem}
+.report-head span{font-family:var(--f-mono);font-size:.78rem;color:var(--muted)}
+.example{font-family:var(--f-mono);font-size:.7rem;padding:.15rem .5rem;border-radius:4px;background:var(--amber-soft);color:var(--amber)}
+.status-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.6rem}
+.status{display:flex;gap:.6rem;align-items:flex-start;font-size:.9rem;padding:.6rem;border-radius:8px;background:var(--bg)}
+.status .dot{margin-top:.35rem}
+.status.g .dot{background:var(--green)} .status.y .dot{background:var(--amber)}
+.report h4{font-family:var(--f-display);font-size:1rem}
+.report ol{margin:.3rem 0 0;padding-left:1.2rem;display:grid;gap:.45rem;font-size:.93rem}
+.decision{border:1.5px solid var(--amber);border-radius:8px;padding:.8rem 1rem;display:grid;gap:.3rem;font-size:.93rem}
+.decision .rec{color:var(--muted);font-size:.88rem}
+
+/* tech + todo */
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(20rem,1fr));gap:1rem}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.3rem;display:grid;gap:.7rem;align-content:start}
+.box ul{margin:0;padding-left:1.1rem;display:grid;gap:.4rem;font-size:.93rem}
+.box p{font-size:.93rem;color:var(--muted)}
+.todo li::marker{content:"☐  ";color:var(--accent)}
+
+/* rollout */
+.phases{display:grid;gap:.7rem}
+.phase{display:grid;grid-template-columns:7rem 1fr;gap:1rem;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem}
+.phase .when{font-family:var(--f-mono);font-size:.8rem;color:var(--accent);padding-top:.15rem}
+.phase b{font-family:var(--f-display)}
+.phase p{font-size:.92rem;color:var(--muted)}
+@media (max-width:520px){.phase{grid-template-columns:1fr;gap:.3rem}}
+
+.closing{margin-top:3.5rem;padding:1.6rem;border-radius:12px;background:var(--ink);color:var(--bg);display:grid;gap:.6rem}
+.closing p{opacity:.85;max-width:50rem}
+a{color:var(--accent)}
+</style>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">Bauplan · Stand 21. November 2026</div>
+  <h1>Deine Autoren-Agentur</h1>
+  <p class="lead">Ein kleiner Verlag aus KI-Agenten: drei Autorenmarken, gemeinsame Fachabteilungen, eine Marketing-Maschine, die selbstständig läuft und jede Woche dazulernt, und ein CEO, der nur dir berichtet.</p>
+  <div class="meta">
+    <span><b>3</b> Autorenmarken</span>
+    <span><b>6</b> Fachabteilungen</span>
+    <span><b>22</b> Agenten</span>
+    <span><b>1</b> Bericht pro Woche an dich</span>
+  </div>
+</header>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">Die Grundidee</div>
+    <h2>Drei Entscheidungen, die alles tragen</h2>
+    <p class="lead">Ich habe deinen Plan an einer Stelle bewusst geändert: keine drei identischen Teams pro Pseudonym, sondern ein Verlagsmodell.</p>
+  </div>
+  <div class="grid3">
+    <div class="principle">
+      <span class="k">Prinzip 1</span>
+      <h3>Marken vorne, Fachwissen in der Mitte</h3>
+      <p>Jedes Pseudonym hat eine eigene Markenleitung, die Stimme, Zielgruppe und Strategie hütet. Recherche, Marketing und Lektorat arbeiten zentral für alle drei. So lernt jede Marke aus den Erfolgen der anderen, und nichts wird dreimal gebaut.</p>
+    </div>
+    <div class="principle">
+      <span class="k">Prinzip 2</span>
+      <h3>Eine Lernschleife statt einzelner Aufgaben</h3>
+      <p>Jeder Post, jede Rezension und jede Zahl landet im Erkenntnis-Log. Bei jedem Lauf lesen die Agenten zuerst, was funktioniert hat. Die Agentur wird dadurch von Woche zu Woche besser, nicht nur fleißiger.</p>
+    </div>
+    <div class="principle">
+      <span class="k">Prinzip 3</span>
+      <h3>Freiheit mit Ampel</h3>
+      <p>Alles im grünen Bereich erledigen die Agenten allein. Gelbe Punkte kommen als fertige Entscheidungsvorlage zu dir, rote Punkte entscheidest nur du. Das Marketing läuft dadurch selbstständig, ohne dass etwas Peinliches oder Teures passiert.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">Organigramm</div>
+    <h2>Wer wem berichtet</h2>
+  </div>
+  <div class="org">
+    <div class="org-row"><div class="node you"><b>Du</b><span>Verleger · gibt frei</span></div></div>
+    <div class="connector"></div>
+    <div class="org-row"><div class="node ceo"><b>CEO</b><span>Verlagsleitung · berichtet nur dir</span></div></div>
+    <div class="connector"></div>
+    <div class="org-label">Markenleitungen</div>
+    <div class="cluster">
+      <div class="pair">
+        <span class="tag">Paar-Universum · empfehlen sich gegenseitig</span>
+        <div class="node leif"><b>Leif Hartmann</b><span>Ehe aus Männersicht · live</span></div>
+        <div class="node sonja"><b>Sonja Dechert</b><span>Reihe „Frau zu Frau“ · Start</span></div>
+      </div>
+      <div class="node kris"><b>Jan Wachter</b><span>Krisenvorsorge · streng getrennt</span></div>
+    </div>
+    <div class="connector"></div>
+    <div class="org-label">Fachabteilungen (arbeiten für alle drei Marken)</div>
+    <div class="depts">
+      <div class="dept-node"><b>Marktforschung</b><span>Konkurrenz, Rezensionen, Trends</span></div>
+      <div class="dept-node star"><b>Marketing-Maschine</b><span>läuft selbstständig</span></div>
+      <div class="dept-node"><b>Amazon-Shop</b><span>Sichtbarkeit &amp; Verkauf</span></div>
+      <div class="dept-node"><b>Buch-Werkstatt</b><span>Lektorat, Faktencheck, Neues</span></div>
+      <div class="dept-node"><b>Leserbindung</b><span>Newsletter, Leserteam, PR</span></div>
+      <div class="dept-node"><b>Recht &amp; Controlling</b><span>Schutz, Zahlen, Markenwächter</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">Die Führung</div>
+    <h2>CEO und Markenleitungen</h2>
+  </div>
+  <div class="dept">
+    <div class="agents">
+      <div class="agent">
+        <span class="rh">wöchentlich · Montag</span>
+        <h4>CEO</h4>
+        <p>Liest alle Abteilungsberichte, entscheidet, welche Marke diese Woche Vorrang hat, und schreibt dir einen einseitigen Bericht mit höchstens drei Entscheidungen samt Empfehlung. Meldet sich außerhalb der Reihe nur bei echten Notfällen, etwa einer 1-Stern-Welle oder einem Shitstorm.</p>
+      </div>
+      <div class="agent">
+        <span class="rh">wöchentlich · je Marke</span>
+        <h4>Markenleitungen (3)</h4>
+        <p>Besitzt die Markenbibel ihres Pseudonyms: Stimme, Zielgruppe, Versprechen, verbotene Themen. Erteilt den Fachabteilungen die Aufträge für ihre Marke und prüft deren Ergebnisse, bevor sie zum CEO gehen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">Die Fachabteilungen</div>
+    <h2>Sechs Abteilungen, 18 Rollen</h2>
+  </div>
+
+  <div class="dept">
+    <div class="dept-top"><h3>Marktforschung</h3><span class="pill">liefert die Rohstoffe</span></div>
+    <p class="lead" style="font-size:1rem">Beobachtet den Markt, damit keine Entscheidung aus dem Bauch fällt.</p>
+    <div class="agents">
+      <div class="agent"><span class="rh">wöchentlich</span><h4>Konkurrenz-Radar</h4><p>Verfolgt je Marke die 10 bis 15 wichtigsten Konkurrenztitel: Rang, Preis, Cover, Klappentext, neue Erscheinungen und deren Instagram-Auftritt. Meldet nur, was sich verändert hat.</p></div>
+      <div class="agent"><span class="rh">wöchentlich</span><h4>Rezensions-Detektiv</h4><p>Liest die 1- bis 3-Sterne-Rezensionen der Konkurrenz. Was dort fehlt oder nervt, wird zu unserem Verkaufsargument und zur Verbesserungsliste für die Bücher. Das ist der Hebel, den fast kein Selbstverleger nutzt.</p></div>
+      <div class="agent"><span class="rh">täglich, kurz</span><h4>Trend- und Anlass-Scout</h4><p>Sucht aktuelle Anlässe: neue Studien zu Wechseljahren, Stromausfälle und Warnungen für Krisenvorsorge, Beziehungsthemen, die gerade viral gehen. Daraus entstehen Posts, die zum Tagesgeschehen passen.</p></div>
+    </div>
+  </div>
+
+  <div class="dept" style="border-color:var(--accent)">
+    <div class="dept-top"><h3>Marketing-Maschine</h3><span class="pill">läuft selbstständig</span></div>
+    <p class="lead" style="font-size:1rem">Das Herzstück. Plant, produziert, veröffentlicht und misst ohne dein Zutun, innerhalb der Ampelregeln.</p>
+    <div class="agents">
+      <div class="agent"><span class="rh">monatlich + wöchentlich</span><h4>Content-Stratege</h4><p>Legt pro Marke Monatsthemen und feste Rubriken fest, etwa „Sonntagsfrage an Paare“ bei Leif oder „Mythos der Woche“ bei Sonja. Plant die Woche nach dem, was zuletzt funktioniert hat.</p></div>
+      <div class="agent"><span class="rh">wöchentlich</span><h4>Texter &amp; Reel-Autor</h4><p>Schreibt Captions, Karussell-Texte, Reel-Skripte mit starken ersten drei Sekunden und Hashtag-Sets. Testet bewusst zwei Varianten pro Thema.</p></div>
+      <div class="agent"><span class="rh">täglich</span><h4>Veröffentlicher</h4><p>Plant die fertigen Posts über Metricool zur besten Uhrzeit des jeweiligen Kanals ein. Am Anfang zur Prüfung durch dich, später automatisch.</p></div>
+      <div class="agent"><span class="rh">täglich</span><h4>Community-Manager</h4><p>Bereitet Antworten auf Kommentare und Nachrichten vor, nach den vorhandenen Antwortvorlagen. Erkennt heikle Nachrichten, zum Beispiel zu Gewalt oder Krisen, und gibt sie sofort an dich weiter.</p></div>
+      <div class="agent"><span class="rh">wöchentlich</span><h4>Performance-Analyst</h4><p>Wertet in Metricool Reichweite, Speicherungen, Profilbesuche und Link-Klicks aus. Schreibt die Gewinner und Verlierer ins Erkenntnis-Log. Daran richtet sich der Plan der nächsten Woche aus.</p></div>
+    </div>
+  </div>
+
+  <div class="dept">
+    <div class="dept-top"><h3>Amazon-Shop</h3><span class="pill">größter Verkaufshebel</span></div>
+    <p class="lead" style="font-size:1rem">Die meisten Käufe entscheiden sich auf der Amazon-Seite, nicht auf Instagram.</p>
+    <div class="agents">
+      <div class="agent"><span class="rh">monatlich</span><h4>Listing-Optimierer</h4><p>Verbessert Untertitel, Beschreibung, die 7 Schlüsselwörter, Kategorien und A+-Inhalte, gestützt auf Konkurrenz- und Rezensionsdaten. Jede Änderung geht als Vorlage zu dir.</p></div>
+      <div class="agent"><span class="rh">monatlich</span><h4>Preis- &amp; Aktionsplaner</h4><p>Plant Aktionspreise, Kindle-Countdown, Gratis-Tage und den Ablauf der Buchstarts. Schlägt Amazon-Werbung mit kleinem Testbudget vor, sobald genug Rezensionen da sind.</p></div>
+    </div>
+  </div>
+
+  <div class="dept">
+    <div class="dept-top"><h3>Buch-Werkstatt</h3><span class="pill">macht die Bücher besser</span></div>
+    <p class="lead" style="font-size:1rem">Ein E-Book bei KDP lässt sich jederzeit aktualisieren. Das nutzen wir.</p>
+    <div class="agents">
+      <div class="agent"><span class="rh">quartalsweise</span><h4>Aktualitäts-Wächter</h4><p>Prüft Fakten auf den neuesten Stand. Unverzichtbar für die Wechseljahre (Medizin) und die Krisenvorsorge (Behördenempfehlungen, Ereignisse). Veraltetes kommt auf die Änderungsliste.</p></div>
+      <div class="agent"><span class="rh">monatlich</span><h4>Lektor</h4><p>Arbeitet Leserkritik und Rezensions-Erkenntnisse in konkrete Textvorschläge um. Er ändert nie selbst, sondern schreibt eine Vorher-nachher-Liste zur Freigabe.</p></div>
+      <div class="agent"><span class="rh">quartalsweise</span><h4>Produktplaner</h4><p>Sucht die nächsten Bücher und Formate: Arbeitsbuch, Tagebuch, Hörbuch, englische Ausgaben, Paar-Bundle von Leif und Sonja. Bewertet jede Idee nach Nachfrage und Aufwand.</p></div>
+    </div>
+  </div>
+
+  <div class="dept">
+    <div class="dept-top"><h3>Leserbindung</h3><span class="pill">baut Eigentum auf</span></div>
+    <p class="lead" style="font-size:1rem">Follower gehören Instagram, eine E-Mail-Liste gehört dir.</p>
+    <div class="agents">
+      <div class="agent"><span class="rh">einmalig + monatlich</span><h4>Newsletter &amp; Lesergeschenk</h4><p>Erstellt pro Marke ein Gratis-Geschenk gegen E-Mail-Adresse, etwa „30 Brücken für den Alltag“ oder die „Notfall-Checkliste für Familien“, und schreibt den monatlichen Newsletter.</p></div>
+      <div class="agent"><span class="rh">vor jedem Buchstart</span><h4>Leserteam &amp; Kooperationen</h4><p>Baut ein Vorab-Leserteam für ehrliche erste Rezensionen auf. Findet Podcasts, Blogs und Facebook-Gruppen, die zur Zielgruppe passen, und entwirft Anfragen. Verschickt wird nur nach deiner Freigabe.</p></div>
+    </div>
+  </div>
+
+  <div class="dept">
+    <div class="dept-top"><h3>Recht &amp; Controlling</h3><span class="pill">schützt dich</span></div>
+    <p class="lead" style="font-size:1rem">Damit die Agentur schnell sein kann, ohne dich in Schwierigkeiten zu bringen.</p>
+    <div class="agents">
+      <div class="agent"><span class="rh">bei jedem Inhalt</span><h4>Markenwächter</h4><p>Prüft jeden Text: Klingt er nach dem richtigen Pseudonym? Verrät nichts die Verbindung zwischen der Krisenvorsorge-Marke und den anderen? Enthält er keine Heilversprechen?</p></div>
+      <div class="agent"><span class="rh">monatlich</span><h4>Rechts-Check</h4><p>Hat Impressumspflicht, Werbekennzeichnung, Amazon-Richtlinien, KI-Angabe bei KDP und Gesundheitsaussagen im Blick. Er ersetzt keinen Anwalt, erkennt aber, wann du einen brauchst.</p></div>
+      <div class="agent"><span class="rh">monatlich</span><h4>Controller</h4><p>Wertet deinen KDP-Verkaufsbericht aus: Verkäufe, gelesene Seiten (KENP), Einnahmen, Werbekosten. Er zeigt, welche Marke und welche Maßnahme sich wirklich lohnt.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">So läuft das Marketing allein</div>
+    <h2>Die Wochenschleife</h2>
+  </div>
+  <div class="loop">
+    <div class="step"><b>Beobachten</b><p>Radar, Detektiv und Scout liefern Markt, Leserschmerzen und Anlässe.</p></div>
+    <div class="step"><b>Planen</b><p>Der Stratege baut den Wochenplan aus Erkenntnis-Log und Markenbibel.</p></div>
+    <div class="step"><b>Produzieren</b><p>Der Texter schreibt Posts in zwei Varianten, der Markenwächter prüft sie.</p></div>
+    <div class="step"><b>Veröffentlichen</b><p>Metricool postet zur besten Zeit. Der Community-Manager antwortet.</p></div>
+    <div class="step"><b>Messen</b><p>Der Analyst vergleicht die Varianten und Kanäle mit der Vorwoche.</p></div>
+    <div class="step"><b>Lernen</b><p>Gewinner kommen ins Erkenntnis-Log. Damit beginnt die nächste Woche.</p></div>
+  </div>
+  <p class="loop-note">Das Gedächtnis der Agentur sind drei Dokumente pro Marke in deinem Google Drive: die <b>Markenbibel</b> (wer wir sind), das <b>Erkenntnis-Log</b> (was funktioniert) und das <b>Entscheidungs-Log</b> (was du entschieden hast). Du kannst sie jederzeit lesen und ändern. Die Agenten halten sich beim nächsten Lauf daran.</p>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">Strategie je Marke</div>
+    <h2>Womit ich bei jedem Pseudonym anfangen würde</h2>
+  </div>
+  <div class="imprints">
+    <div class="imp leif">
+      <span class="st">Leif Hartmann · veröffentlicht</span>
+      <h3>Die ersten 20 Rezensionen holen</h3>
+      <ul>
+        <li>Instagram läuft schon über Metricool. Die Maschine startet hier zuerst.</li>
+        <li>Rezensionen haben Vorrang: Unter etwa 20 Bewertungen verpufft fast jede Werbung.</li>
+        <li>Das englische E-Book ist ein zweiter Markt mit eigener Konkurrenzbeobachtung (Amazon.com).</li>
+        <li>Zielgruppe sind auch Frauen, die das Buch für ihren Mann kaufen. Diese Ansprache bekommt eine eigene Rubrik.</li>
+      </ul>
+      <p class="why">Warum: Das Buch ist live. Jede Woche ohne Sichtbarkeit kostet Ranking.</p>
+    </div>
+    <div class="imp sonja">
+      <span class="st">Sonja Dechert · startbereit</span>
+      <h3>Drei Bände im Abstand veröffentlichen</h3>
+      <ul>
+        <li>Nicht alle drei Bände auf einmal, sondern alle 3 bis 5 Wochen einen. Jeder Start bringt Amazon-Aufmerksamkeit und stärkt die Reihe.</li>
+        <li>Frauen von 45 bis 60 sind stark auf Facebook und in Facebook-Gruppen zu Wechseljahren. Deshalb Facebook plus Instagram.</li>
+        <li>Starke Kreuzwerbung mit Leif: „Seine Sicht, ihre Sicht“ als gemeinsame Aktion und später als Paket.</li>
+        <li>Band 2 (Wechseljahre) bekommt einen strengen Faktencheck und keine Heilversprechen in der Werbung.</li>
+      </ul>
+      <p class="why">Warum: Manuskripte und Umschläge sind fertig. Jetzt entscheidet der Startplan.</p>
+    </div>
+    <div class="imp kris">
+      <span class="st">Jan Wachter · Krisenvorsorge · Konzept</span>
+      <h3>Vor dem Winter fertig werden</h3>
+      <ul>
+        <li>Die Nachfrage nach Vorsorge-Ratgebern steigt im Winter und bei jedem Stromausfall. Der Zeitpunkt zählt hier mehr als bei den anderen Marken.</li>
+        <li>Positionierung laut deiner Recherche: ruhig, familientauglich, aktuell, ausdrücklich ohne Panikmache.</li>
+        <li>Der Anlass-Scout ist hier der wichtigste Agent. Jede offizielle Warnung wird zu einem sachlichen Post.</li>
+        <li>Komplett getrennt von Leif und Sonja: eigene Konten und keine Querverweise.</li>
+      </ul>
+      <p class="why">Warum: Der Markt hat keinen klaren Marktführer. Das Zeitfenster ist offen.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">Arbeitsrhythmus</div>
+    <h2>Wann was passiert</h2>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Takt</th><th>Wer arbeitet</th><th>Was du davon merkst</th></tr></thead>
+      <tbody>
+        <tr><td>Täglich, morgens</td><td>Anlass-Scout, Veröffentlicher, Community-Manager</td><td>Posts gehen raus. Nur bei heiklen Nachrichten bekommst du eine Mail.</td></tr>
+        <tr><td>Montag</td><td>Alle Abteilungen, dann Markenleitungen, dann CEO</td><td>Ein Wochenbericht in Drive und als Mail: eine Seite, höchstens 3 Entscheidungen.</td></tr>
+        <tr><td>Monatsanfang</td><td>Stratege, Amazon-Shop, Controller, Lektor, Newsletter</td><td>Monatsplan, Zahlenbericht und Verbesserungsvorschläge zur Freigabe.</td></tr>
+        <tr><td>Quartal</td><td>Aktualitäts-Wächter, Produktplaner, CEO</td><td>Strategie-Rückblick: Was läuft, was stoppen wir, welches Buch kommt als Nächstes?</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">Die Ampel</div>
+    <h2>Was die Agenten allein dürfen</h2>
+  </div>
+  <div class="ampel">
+    <div class="lvl g">
+      <h3><span class="dot"></span>Grün</h3>
+      <span class="who">Agenten machen es allein</span>
+      <ul>
+        <li>Recherchieren, analysieren, Berichte schreiben</li>
+        <li>Posts schreiben und laut Monatsplan einplanen</li>
+        <li>Markenbibel und Logs aktualisieren</li>
+        <li>Antwortentwürfe für Kommentare vorbereiten</li>
+      </ul>
+    </div>
+    <div class="lvl y">
+      <h3><span class="dot"></span>Gelb</h3>
+      <span class="who">Fertige Vorlage, du sagst Ja oder Nein</span>
+      <ul>
+        <li>Neue Kampagne oder neuer Kanal</li>
+        <li>Änderungen an Buchtext, Klappentext oder Amazon-Seite</li>
+        <li>Preisaktionen</li>
+        <li>Anfragen an Podcasts, Blogs, Partner</li>
+      </ul>
+    </div>
+    <div class="lvl r">
+      <h3><span class="dot"></span>Rot</h3>
+      <span class="who">Nur du</span>
+      <ul>
+        <li>Veröffentlichen bei Amazon KDP</li>
+        <li>Jede Ausgabe von Geld, etwa Werbebudget</li>
+        <li>Persönliche Aussagen „als Autor“ über das eigene Leben</li>
+        <li>Rechtliche Angaben wie das Impressum</li>
+      </ul>
+    </div>
+  </div>
+  <p class="loop-note">Die Marketing-Maschine startet zwei Wochen lang im Prüfmodus: Posts landen in Metricool, und du gibst sie mit einem Klick frei. Wenn die Qualität stimmt, schalten wir auf automatisches Posten um. Ab dann läuft das Marketing wirklich allein.</p>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">So sieht ein Wochenbericht aus</div>
+    <h2>Eine Seite, jeden Montag</h2>
+  </div>
+  <div class="report">
+    <div class="report-head">
+      <h3>CEO-Bericht · KW 49</h3>
+      <span class="example">Beispiel, keine echten Zahlen</span>
+    </div>
+    <div class="status-row">
+      <div class="status g"><span class="dot"></span><div><b>Leif Hartmann</b><br>Reel „Mitbewohner“ war bester Post bisher. 3 neue Rezensionen.</div></div>
+      <div class="status y"><span class="dot"></span><div><b>Sonja Dechert</b><br>Instagram-Konto fehlt noch. Startplan für Band 1 liegt bereit.</div></div>
+      <div class="status y"><span class="dot"></span><div><b>Krisenvorsorge</b><br>Name offen. Konkurrent hat neue Auflage angekündigt.</div></div>
+    </div>
+    <div>
+      <h4>Die 3 wichtigsten Erkenntnisse</h4>
+      <ol>
+        <li>Posts, die mit einer Frage an Paare beginnen, werden doppelt so oft gespeichert. Der Stratege plant ab jetzt mehr davon.</li>
+        <li>Konkurrenz-Rezensionen zu Wechseljahren bemängeln immer wieder „keine Fragenliste für den Arzttermin“. Genau das hat Sonjas Band 2. Es kommt in den Klappentext.</li>
+        <li>Der Stromausfall-Bericht in den Nachrichten am Donnerstag zeigt: Ein Krisenvorsorge-Konto hätte Reichweite gebracht.</li>
+      </ol>
+    </div>
+    <div class="decision">
+      <b>Entscheidung 1 von 2: Startdatum Band 1 „Er sitzt neben mir…“</b>
+      <span class="rec">Empfehlung: 12. Januar, Band 2 am 9. Februar, Band 3 am 9. März. Antworte einfach mit „Ja“ oder einem anderen Datum.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">Umsetzung</div>
+    <h2>Was technisch dahintersteckt und was ich von dir brauche</h2>
+  </div>
+  <div class="two">
+    <div class="box">
+      <h3>So baue ich es</h3>
+      <ul>
+        <li><b>Google Drive als Firmensitz:</b> ein Ordner „Autoren-Agentur“ mit Stellenbeschreibungen für alle Agenten, Markenbibeln, Logs und Berichtsarchiv.</li>
+        <li><b>Geplante Aufgaben in der Cloud:</b> eine tägliche Marketing-Schicht, ein Wochenzyklus am Montag, ein Monatszyklus. Jede Schicht spielt mehrere Rollen nacheinander.</li>
+        <li><b>Metricool</b> für Posten und Auswertung, <b>Websuche</b> für Markt und Trends, <b>Gmail</b> für deinen Bericht.</li>
+      </ul>
+      <p>Ehrlich gesagt: Die Agenten laufen nicht ununterbrochen, sondern zu festen Zeiten. Auf deine Amazon-Verkaufszahlen haben sie keinen direkten Zugriff, dafür lädst du einmal im Monat den KDP-Bericht in einen Drive-Ordner. Die Läufe verbrauchen Nutzung deines Claude-Abos.</p>
+    </div>
+    <div class="box">
+      <h3>Deine To-dos</h3>
+      <ul class="todo">
+        <li>Einen Namen für das Krisenvorsorge-Pseudonym festlegen (oder mich Vorschläge machen lassen)</li>
+        <li>Instagram @autorinsonjadechert anlegen und in Metricool verbinden. Ich führe dich Schritt für Schritt.</li>
+        <li>Klären, wie das Impressum für die Pseudonym-Konten aussehen soll. Ein Impressum-Service schützt deine Privatadresse.</li>
+        <li>Einmal im Monat den KDP-Bericht in den Ordner „Zahlen“ legen</li>
+        <li>Montags 5 Minuten für den CEO-Bericht</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">Fahrplan</div>
+    <h2>In vier Schritten zur laufenden Agentur</h2>
+  </div>
+  <div class="phases">
+    <div class="phase"><span class="when">Diese Woche</span><div><b>Fundament</b><p>Drive-Struktur, Markenbibeln aus deinen vorhandenen Dokumenten, alle Stellenbeschreibungen. Dann der erste Wochenzyklus und dein erster echter CEO-Bericht.</p></div></div>
+    <div class="phase"><span class="when">Woche 2–3</span><div><b>Marketing-Maschine für Leif</b><p>Tägliche Schicht startet für Leifs Instagram im Prüfmodus. Erkenntnis-Log beginnt zu wachsen.</p></div></div>
+    <div class="phase"><span class="when">Woche 3–6</span><div><b>Start von Sonja Dechert</b><p>Konto verbinden, Leserteam aufbauen, gestaffelter Start von Band 1. Kreuzwerbung mit Leif.</p></div></div>
+    <div class="phase"><span class="when">Ab Woche 6</span><div><b>Krisenvorsorge und Autopilot</b><p>Name, Konten und Anlass-Scout für die dritte Marke. Das Marketing wechselt auf automatisches Posten.</p></div></div>
+  </div>
+</section>
+
+<div class="closing">
+  <h2>Nächster Schritt</h2>
+  <p>Sag „Los“, dann baue ich Phase 1: die komplette Ordnerstruktur in deinem Drive, alle Stellenbeschreibungen und die Markenbibeln aus deinen vorhandenen Dokumenten. Danach starte ich den ersten Wochenzyklus. Wenn du etwas am Konzept ändern willst, sag es einfach vorher.</p>
+</div>
+
+</div>
