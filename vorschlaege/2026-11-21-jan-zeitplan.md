@@ -1,6 +1,6 @@
 # Zeitplan Jan Wachter (aktualisiert: Manuskript liegt vor)
 
-**Status:** offen · ersetzt die erste Fassung von heute früh
+**Status:** angenommen am 21.11.2026 (Verleger: „dann starten wir los“)
 
 ## Worum geht es?
 Das Manuskript „BEREIT. 2027“ ist im Entwurf fertig. Damit kann das Buch früher erscheinen als im September.

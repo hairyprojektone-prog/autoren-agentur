@@ -1,6 +1,6 @@
 # Leif Hartmann: erste Rezensionen und Impressum
 
-**Status:** offen
+**Status:** angenommen am 21.11.2026 (Verleger: „dann starten wir los“)
 
 ## Worum geht es?
 Zwei Dinge, die jetzt die größte Wirkung haben: Rezensionen und ein rechtssicheres Instagram-Konto.

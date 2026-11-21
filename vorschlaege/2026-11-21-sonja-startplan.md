@@ -1,6 +1,6 @@
 # Startplan Reihe „Frau zu Frau“ (Sonja Dechert)
 
-**Status:** offen
+**Status:** angenommen am 21.11.2026 (Verleger: „dann starten wir los“)
 
 ## Worum geht es?
 Wann und in welchem Abstand erscheinen die drei Bände?
