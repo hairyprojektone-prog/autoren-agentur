@@ -1,6 +1,6 @@
 # Markenbibel: Jan Wachter
 
-Stand: 21.11.2026 · Status: **Konzept** (Recherche vom 18.11.2026 liegt vor, Manuskript nicht begonnen)
+Stand: 21.11.2026 · Status: **Manuskript im Entwurf fertig** (BEREIT. 2027, ca. 43.000 Wörter; fachliches Gegenlesen und Gestaltung offen)
 
 > **Strenge Trennung:** Diese Marke hat keinerlei Verbindung zu Leif Hartmann oder Sonja Dechert. Keine Querverweise, keine gemeinsamen Hashtags, keine gemeinsamen Aktionen.
 
@@ -10,7 +10,7 @@ Stand: 21.11.2026 · Status: **Konzept** (Recherche vom 18.11.2026 liegt vor, Ma
 |---|---|
 | Pseudonym | Jan Wachter (Name am 21.11.2026 festgelegt; Namensprüfung auf Amazon/Instagram noch offen) |
 | Thema | Krisenvorsorge für Familien: Blackout, Sabotage, Heizungsausfall, Hochwasser, Evakuierung |
-| Arbeitstitel | Ernstfall Deutschland. Der Familienplan für Blackout, Sabotage und Krisen 2027 |
+| Titel (Manuskript) | BEREIT. 2027 – Der Familienplan für Stromausfall, Unwetter und andere Krisen (Untertitel noch offen) |
 | Zielgruppe | Eltern 28–50, vor allem Mütter, Mieter in Städten, normales Budget |
 | Versprechen | „Was in Berlin wirklich passiert ist und wie deine Familie beim nächsten Mal ruhig bleibt.“ |
 | Werbeaussage | „Was Japaner, Schweden und Ukrainer wissen und wir noch nicht.“ |
@@ -45,13 +45,14 @@ Kein klarer Marktführer. Meiste Bewertungen: Sebastian Hein (~259). Lesekritik 
 
 Noch keine. Empfehlung aus der Recherche: Konto 3–4 Monate vor Erscheinen aufbauen. Formate: 10-Wochen-Challenge, Mythos-Check, „Stunde 24 ohne Strom“, Pack-Videos, Rezepte aus dem Vorrat, Blackout-Probenacht.
 
-## Offene Entscheidung zum Zeitplan
+## Zeitplan (Vorschlag Startkonzept 21.11.2026, Entscheidung offen)
 
-Die Recherche empfiehlt Erscheinen September/Oktober 2027 (Warntag). Die Agentur prüft, ob ein früherer Start (Winter 2026/27, Jahrestag 3. Januar) realistisch und sinnvoll ist. Entscheidung beim Verleger.
+Auftakt Instagram So 03.01.2027 · 10-Wochen-Challenge 04.01.–14.03. (folgt Kapitel 7 des Buchs) · Buchstart Di 16.03.2027 · zweite Welle zum Warntag (voraussichtlich 09.09.2027). Voraussetzung: fachliches Gegenlesen bis Ende Februar. Details: `konzepte/2026-11-21-startkonzept-sonja-jan.md`.
 
 ## Aktuelle Prioritäten
 
-1. Namensprüfung „Jan Wachter“ (Amazon, Instagram, Websuche)
-2. Zeitplan-Entscheidung vorbereiten
-3. Offene Punkte aus der Recherche: Bestsellerränge, 1–3-Sterne-Rezensionen, BBK-Umfrage prüfen
-4. Probekapitel „96 Stunden ohne Strom im Winter“ (Sache des Verlegers/der Kreativabteilung; Agentur liefert Recherche)
+1. Datenschutz-Funde im Manuskript beheben (echte E-Mail und Ort im Impressum, Personen-Erwähnung unter dem Titel)
+2. Konten einrichten (eigene E-Mail, Instagram, Facebook, Impressum-Service getrennt von Leif/Sonja)
+3. Fachliches Gegenlesen organisieren (Anhang B)
+4. Gestaltung „BEREIT.“ (Cover, Piktogramme, ggf. Eichhörnchen)
+5. Challenge-Inhalte liegen bereit: `inhalte/vorrat/jan-wachter-start.md`

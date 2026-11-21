@@ -50,7 +50,8 @@ Frauen 45+ kaufen vor allem Bücher zu Wechseljahren, Gelassenheit/Loslassen sow
 
 ## Aktuelle Prioritäten
 
-1. Startplan: gestaffelte Veröffentlichung (Empfehlung: alle 3–5 Wochen ein Band)
+1. Startplan laut Startkonzept: Band 1 Di 12.01., Band 2 Di 09.02., Band 3 Mo 08.03.2027 (Entscheidung offen)
+1a. Inhaltsvorrat liegt bereit: `inhalte/vorrat/sonja-dechert-start.md`, Kreuzaktion mit Leif: `inhalte/vorrat/leif-sonja-seine-sicht-ihre-sicht.md`
 2. Instagram anlegen und verbinden; Facebook prüfen
 3. Vorab-Leserteam für erste Rezensionen
 4. Offene To-dos aus den Autorinnen-Infos: Amazon/Instagram-Namensprüfung, KDP-Pseudonym, Author Central, fachliches Gegenlesen Band 2

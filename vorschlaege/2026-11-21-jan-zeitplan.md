@@ -1,19 +1,21 @@
-# Zeitplan Jan Wachter
+# Zeitplan Jan Wachter (aktualisiert: Manuskript liegt vor)
 
-**Status:** offen
+**Status:** offen · ersetzt die erste Fassung von heute früh
 
 ## Worum geht es?
-Wann startet die Marke Jan Wachter öffentlich, und wann erscheint das Buch?
+Das Manuskript „BEREIT. 2027“ ist im Entwurf fertig. Damit kann das Buch früher erscheinen als im September.
 
 ## Empfehlung
-- **Instagram-Start: So 03.01.2027**, Jahrestag des Berliner Blackouts. Erster Post: sachlicher Rückblick „Ein Jahr danach: Was Familien aus 4 Tagen ohne Strom gelernt haben“. Danach die **10-Wochen-Vorsorge-Challenge** (1 Woche = 1 kleiner Schritt, kleines Budget).
-- **Buch: September 2027** zum bundesweiten Warntag, wie in der Recherche empfohlen.
-- **Optional, als schneller Einstieg:** ein kurzes E-Book oder Arbeitsheft „Der Familien-Notfallplan“ (ca. 40–60 Seiten) im Februar/März 2027. Es baut Rezensionen und eine Leserliste auf, bevor das große Buch kommt.
+- **So 03.01.2027:** Instagram-Auftakt zum Jahrestag des Berliner Blackouts
+- **04.01.–14.03.:** 10-Wochen-Challenge, die genau dem 10-Wochen-Plan aus Kapitel 7 folgt (Inhalte fertig: `inhalte/vorrat/jan-wachter-start.md`)
+- **Di 16.03.2027:** Buchstart als Finale der Challenge
+- **Warntag (vorauss. Do 09.09.2027):** zweite Welle mit der Familien-Vorsorgewoche aus dem Buch
+- **Voraussetzung:** fachliches Gegenlesen von mindestens Kapitel 1, 4, 8, 9, 10, 21, 27 und den Sofort-Seiten bis Ende Februar. Klappt das nicht, läuft die Challenge trotzdem und der Buchstart wird verschoben.
 
 ## Warum?
-- Das Hauptbuch (200–240 Seiten, Illustrationen, Comic, fachliches Gegenlesen) ist bis Januar nicht seriös machbar.
-- Die Challenge liefert 10 Wochen Inhalte und baut ein Publikum auf, das das Buch dann sofort kauft.
-- Die Recherche empfiehlt, das Konto 3–4 Monate vor Erscheinen aufzubauen; mit Start im Januar sind es 8 Monate Vorlauf, also mehr Zeit für Vertrauen.
+- Die Challenge baut 10 Wochen lang ein Publikum auf, das am Ende genau das Buch braucht.
+- Winter und Jahrestag sorgen für Aufmerksamkeit. Der Markt hat keinen klaren Marktführer, und das Zeitfenster ist offen.
+- Ein Start erst im September würde fast ein Jahr Vorsprung verschenken.
 
 ## Risiko und Aufwand
-Mittel. Das kurze Arbeitsheft braucht Schreibzeit in der Kreativabteilung. Ohne Arbeitsheft: geringer Aufwand.
+Mittel. Am meisten Zeit kostet die Suche nach Fachleuten fürs Gegenlesen; der Leserteam-Agent erstellt dafür eine Liste mit Anschreiben. Gestaltung (Cover, Piktogramme) ggf. mit Kosten (rot).

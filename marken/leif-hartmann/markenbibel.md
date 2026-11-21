@@ -47,4 +47,4 @@ Antwortvorlagen im Drive: „Antwortvorlagen & automatische Antworten“. Jeden 
 1. Erste 20 Amazon-Rezensionen (darunter wirkt Werbung kaum)
 2. Regelmäßiger Instagram-Rhythmus über Metricool
 3. Englischer Markt (Amazon.com) beobachten
-4. Kreuzempfehlung mit Sonja Dechert vorbereiten (ab deren Buchstart)
+4. Rolle im Startkonzept: **Testlabor** für neue Formate (Erkenntnisse gehen intern an Sonja und Jan) und Kreuzaktion „Seine Sicht, ihre Sicht“ mit Sonja (nie mit Jan)

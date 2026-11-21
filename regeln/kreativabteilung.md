@@ -32,4 +32,4 @@ Stand: 21.11.2026. Wenn eine ID nicht mehr funktioniert, per Drive-Suche nach de
 | Inhalt | Titel | ID |
 |---|---|---|
 | Recherche und Konzept | Buchprojekt 2 – Krisenvorsorge: Recherche und Konzept (Stand 18.11.2026) | `1dErTtNQAq07CxmVcsT0uyvwTztBIH1xME0ovbvUK2bs` |
-| Manuskript | noch nicht begonnen | – |
+| Manuskript | BEREIT. 2027 – Gesamtmanuskript (ca. 43.000 Wörter, 29 Kapitel + Arbeitsbuch) | `18WjoXyOlJ2HHacVnygX4wLwpRXLtWxCnQzNaYed-X_0` |
