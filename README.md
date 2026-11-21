@@ -23,3 +23,18 @@ Dein Team aus KI-Agenten für die Pseudonyme **Leif Hartmann**, **Sonja Dechert*
 | `entscheidungs-log.md` | Alles, was du entschieden hast |
 | `CLAUDE.md` | Betriebsanleitung für das Team |
 | `konzept.html` | Das Konzept als Grafik |
+
+## Automatische Termine
+
+| Was | Wann | Ergebnis |
+|---|---|---|
+| Wochenzyklus (am ersten Montag im Monat mit Monatszyklus, im Quartal mit Quartalszyklus) | Montag 06:40 | CEO-Bericht per Mail, Leitstand aktualisiert |
+| Tägliche Marketing-Schicht | Di–So 07:17 | Anlässe, Posts in Metricool (Prüfmodus), Notfall-Mails |
+
+Beide laufen in der Claude-Sitzung, in der die Agentur aufgebaut wurde, weil dort Metricool, Gmail und Google Drive verbunden sind. Ändern oder pausieren: einfach Claude in dieser Sitzung fragen.
+
+## Grafische Übersichten
+
+- Leitstand: https://claude.ai/artifact/FqF7cY8yQErK4n5caKiY4i
+- Konzept: https://claude.ai/artifact/Q7FiPwJLnWBTmLRLihxziw
+- Startkonzept 2027: https://claude.ai/artifact/Pm5PJEiGvrjCa123ViGCo8
