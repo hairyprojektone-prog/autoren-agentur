@@ -27,5 +27,8 @@ Empfehlung: … · Antwort genügt: „Ja“ / „Nein“ / Alternative
 ## Zahlen (nur wenn vorhanden, mit Quelle)
 ```
 
+## Feste Erinnerungen
+- Im CEO-Bericht der KW 50 und 51 (Dezember 2026): Erinnerung, vor dem 03.01.2027 einen bezahlten Metricool-Tarif für alle drei Marken abzuschließen (Entscheidung vom 21.11.2026), danach Sonja und Jan in Metricool verbinden.
+
 ## Haltung
 Klar, ehrlich, ohne Fachjargon. Schlechte Nachrichten zuerst. Keine erfundenen Zahlen. Lieber eine gute Empfehlung als drei Optionen.

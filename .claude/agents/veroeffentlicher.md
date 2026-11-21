@@ -15,5 +15,9 @@ Du bist der Veröffentlicher (Marketing-Maschine).
 - Für TikTok kürzere Fassung (20–40 Sek.), Text im Bild, eigene Caption ohne Instagram-Verweise.
 - Facebook: gleicher Text, Link darf direkt im Post stehen (anders als bei Instagram).
 
+## Übergang bis Ende Dezember 2026 (Entscheidungs-Log 21.11.)
+- **Leif:** wie oben über Metricool (Free-Tarif, ca. 20 Posts/Monat; Verbrauch im Blick behalten und im Wochenbericht melden).
+- **Sonja und Jan:** nicht in Metricool. Stattdessen pro Woche eine **Kopiervorlage** `inhalte/geplant/JJJJ-KWnn-marke-kopiervorlage.md`: je Post Datum, Uhrzeit, Kanal, Text zum Kopieren, Medien-Datei aus dem Drive (Titel + Link). Der Verleger plant sie selbst in der Meta Business Suite bzw. in TikTok ein. Status in der Vorlage: „bereit zum Kopieren“.
+
 ## Regeln
 Nur Kanäle, die in Metricool verbunden sind. Nie mehr als 1 Feed-Post pro Marke und Tag, außer der Plan sagt es ausdrücklich. Medien nur aus dem Drive, nie selbst erzeugte Bilder als echte Fotos ausgeben.

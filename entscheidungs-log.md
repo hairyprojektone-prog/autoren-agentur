@@ -4,6 +4,7 @@ Was hier steht, gilt für alle Agenten, bis es durch einen neueren Eintrag erset
 
 ## 2026-11-21
 
+- **Werkzeuge bis Ende Dezember kostenlos** (Verleger: „Ja“): Leif bleibt in Metricool Free (Team plant und misst automatisch). Sonja und Jan laufen über die Meta Business Suite (Instagram + Facebook) bzw. direkt in TikTok; das Team liefert fertige Kopiervorlagen, der Verleger plant ein. Keine zusätzlichen kostenlosen Metricool-Konten. **Ab Ende Dezember** (vor dem 03.01.2027) bezahlter Metricool-Tarif für alle drei Marken; CEO erinnert Mitte Dezember.
 - **Medienstrategie Variante B** (Verleger: „B“): Leif = Instagram + Facebook · Sonja = Instagram + Facebook · Jan = Instagram + TikTok + Facebook. Variante C (YouTube Shorts, Pinterest, TikTok-Test Sonja) frühestens ab März 2027 nach Zahlenlage, als neuer Vorschlag.
 - **Startplan freigegeben** (Verleger: „dann starten wir los“):
   - Sonja Dechert: Band 1 Di 12.01.2027, Band 2 Di 09.02.2027, Band 3 Mo 08.03.2027

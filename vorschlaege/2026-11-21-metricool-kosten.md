@@ -1,6 +1,6 @@
 # Metricool oder kostenlose Alternative?
 
-**Status:** offen · recherchiert am 21.11.2026 (Quellen: metricool.com/de/preisliste, help.metricool.com, support.buffer.com; Preise vor Entscheidung selbst prüfen)
+**Status:** angenommen am 21.11.2026
 
 ## Fakten
 - **Metricool Free:** 1 Marke, ca. 20 Posts/Monat, 30 Tage Analyse. Die Verbindung zu Claude (MCP) gibt es auch im Free-Tarif.
