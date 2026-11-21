@@ -1,6 +1,6 @@
 # Medienstrategie: Welche Kanäle für welche Marke?
 
-**Status:** offen · erarbeitet von content-stratege, performance-analyst, den drei Markenleitungen und rechts-check · 21.11.2026
+**Status:** angenommen am 21.11.2026: Variante B
 
 ## Was wir wissen (mit Quelle)
 

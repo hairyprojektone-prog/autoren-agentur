@@ -4,6 +4,7 @@ Was hier steht, gilt für alle Agenten, bis es durch einen neueren Eintrag erset
 
 ## 2026-11-21
 
+- **Medienstrategie Variante B** (Verleger: „B“): Leif = Instagram + Facebook · Sonja = Instagram + Facebook · Jan = Instagram + TikTok + Facebook. Variante C (YouTube Shorts, Pinterest, TikTok-Test Sonja) frühestens ab März 2027 nach Zahlenlage, als neuer Vorschlag.
 - **Startplan freigegeben** (Verleger: „dann starten wir los“):
   - Sonja Dechert: Band 1 Di 12.01.2027, Band 2 Di 09.02.2027, Band 3 Mo 08.03.2027
   - Jan Wachter: Auftakt So 03.01.2027, 10-Wochen-Challenge 04.01.–14.03., Buchstart Di 16.03.2027, zweite Welle Warntag. Voraussetzung bleibt das fachliche Gegenlesen.

@@ -36,7 +36,7 @@ Besonderheiten: Band 2 hat Symptom-Tagebuch, Fragenliste für die Ärztin, Mini-
 | Kanal | Handle | Stand |
 |---|---|---|
 | Instagram | @autorinsonjadechert | **noch anzulegen**, dann mit Metricool verbinden |
-| Facebook | – | empfohlen (Zielgruppe 45–60 dort sehr aktiv, Wechseljahre-Gruppen) |
+| Facebook-Seite | Sonja Dechert | **anzulegen** (Variante B), wichtigster Kanal für 50+; in Gruppen hilfreich mitreden, nicht werben |
 | Domain | sonjadechert.de | optional |
 
 ## Markt (Stand 20.11.2026)

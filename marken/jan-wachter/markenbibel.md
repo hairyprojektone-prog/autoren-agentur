@@ -43,7 +43,15 @@ Kein klarer Marktführer. Meiste Bewertungen: Sebastian Hein (~259). Lesekritik 
 
 ## Kanäle
 
-Noch keine. Empfehlung aus der Recherche: Konto 3–4 Monate vor Erscheinen aufbauen. Formate: 10-Wochen-Challenge, Mythos-Check, „Stunde 24 ohne Strom“, Pack-Videos, Rezepte aus dem Vorrat, Blackout-Probenacht.
+Laut Medienstrategie Variante B (21.11.2026), alle **anzulegen** bis 15.12.2026, eigene E-Mail und ggf. eigene Telefonnummer, Kontaktsynchronisation aus:
+
+| Kanal | Rolle |
+|---|---|
+| Instagram | Kern: Challenge, Karussells, Mythos-Checks |
+| TikTok | Kern: kurze Pack-Videos, Mythos-Checks, Challenge-Woche in 20–40 Sek. |
+| Facebook-Seite | gespiegelt, Eltern 35+, lokale Gruppen bei Stromausfällen |
+
+Empfehlung aus der Recherche: Konto 3–4 Monate vor Erscheinen aufbauen. Formate: 10-Wochen-Challenge, Mythos-Check, „Stunde 24 ohne Strom“, Pack-Videos, Rezepte aus dem Vorrat, Blackout-Probenacht.
 
 ## Zeitplan (Vorschlag Startkonzept 21.11.2026, Entscheidung offen)
 

@@ -29,6 +29,7 @@ Stand: 21.11.2026 · Status: **veröffentlicht**
 | Kanal | Handle | Stand |
 |---|---|---|
 | Instagram | @autorleifhartmann | aktiv, mit Metricool verbunden (Brand-ID 8206255) |
+| Facebook-Seite | Leif Hartmann | **anzulegen** (Variante B), Reels werden gespiegelt |
 
 ## Bewährte Formate (aus den ersten Reels)
 

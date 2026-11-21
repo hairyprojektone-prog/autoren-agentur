@@ -71,3 +71,18 @@ Budget-Richtwerte vor Veröffentlichung mit Kapitel 7 („Was kostet das?“) ab
 - Bei echten Stromausfällen oder Unglücken in der Challenge-Zeit: keine Werbung an diesem Tag, nur sachliche Hinweise (NINA-App, Behördenseiten).
 - Keine Produktempfehlungen mit Markennamen ohne Kennzeichnung; keine Affiliate-Links ohne Entscheidung des Verlegers.
 - Zahlen im Auftakt-Post nur mit Quellen aus dem Manuskript (Kap. 1) verwenden.
+
+---
+
+## TikTok-Fassung (Medienstrategie Variante B)
+
+Jede Challenge-Woche bekommt ein **20–40-Sekunden-Video** im TikTok-Stil, gleiche Inhalte wie Instagram, aber schneller:
+
+| Baustein | Beispiel Woche 1 |
+|---|---|
+| Einstieg (0–2 Sek., Text im Bild) | „Wie viel Wasser brauchst du, wenn der Strom 4 Tage weg ist?“ |
+| Zeigen (Hände, Einkaufswagen, Regal) | Sechserpack pro Person ins Regal stellen, Zahl einblenden |
+| Mythos (1 Satz) | „Leitungswasser kommt immer? Nicht, wenn die Pumpen keinen Strom haben.“ |
+| Aufforderung | „Woche 1 von 10. Machst du mit? #bereitin10wochen“ |
+
+Hinweis: Musik in TikTok nur aus der kommerziell freigegebenen Bibliothek (Business-Konto). KI-Stimme oder KI-Bilder kennzeichnen.
