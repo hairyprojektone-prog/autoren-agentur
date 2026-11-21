@@ -1,0 +1,264 @@
+<title>Startplan 2027</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: launch plan; thesis, Leif's dual role, 11-month swimlane timeline, per-brand phases, challenge strip, checklist + fixes */
+:root{
+  --bg:#F3F5F8; --surface:#FFFFFF; --ink:#152038; --muted:#5B6579; --line:#D8DDE6;
+  --accent:#2B5F8A; --accent-soft:#E2EBF4;
+  --leif:#3D6E9E; --leif-soft:#E4EDF6; --sonja:#A3456B; --sonja-soft:#F6E6ED; --jan:#C2571A; --jan-soft:#FBE9DD;
+  --warn:#A86A00; --warn-soft:#FBEFD6; --red:#B23A3A; --red-soft:#F8E3E3;
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif; --f-body:"Inter",system-ui,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1420; --surface:#162032; --ink:#E6EBF3; --muted:#9AA4B8; --line:#29344D; --accent:#80B1DC; --accent-soft:#1C2C44;
+  --leif:#86B3DE; --leif-soft:#1B2A3F; --sonja:#E08AAE; --sonja-soft:#391F2F; --jan:#F0965E; --jan-soft:#3A2416;
+  --warn:#E8B04A; --warn-soft:#35280F; --red:#EC8A8A; --red-soft:#3A1C1C; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1420; --surface:#162032; --ink:#E6EBF3; --muted:#9AA4B8; --line:#29344D; --accent:#80B1DC; --accent-soft:#1C2C44;
+  --leif:#86B3DE; --leif-soft:#1B2A3F; --sonja:#E08AAE; --sonja-soft:#391F2F; --jan:#F0965E; --jan-soft:#3A2416;
+  --warn:#E8B04A; --warn-soft:#35280F; --red:#EC8A8A; --red-soft:#3A1C1C; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 4rem}
+.wrap{max-width:76rem;margin:0 auto;display:grid;gap:2.8rem}
+h1,h2,h3{font-family:var(--f-display);margin:0;line-height:1.15;text-wrap:balance}
+h1{font-size:clamp(2rem,4.8vw,3.2rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:800}
+h3{font-size:1.02rem;font-weight:600}
+p{margin:0}
+.eyebrow{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.muted{color:var(--muted)}
+section{display:grid;gap:1rem}
+.head{display:grid;gap:.45rem;max-width:50rem}
+header{padding-top:2.5rem;display:grid;gap:.9rem}
+.lead{color:var(--muted);font-size:1.08rem;max-width:48rem}
+.thesis{display:grid;grid-template-columns:auto 1fr auto 1fr;gap:.6rem 1rem;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1rem 1.2rem;max-width:44rem}
+.thesis .old{color:var(--muted);text-decoration:line-through}
+.thesis b{font-family:var(--f-display);font-size:1.1rem}
+.thesis .arrow{font-family:var(--f-mono);color:var(--accent)}
+@media (max-width:560px){.thesis{grid-template-columns:1fr}.thesis .arrow{display:none}}
+
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(19rem,1fr));gap:1rem}
+.role{border-radius:12px;padding:1.2rem;display:grid;gap:.6rem;align-content:start;background:var(--surface);border:1.5px solid var(--line)}
+.role.lab{border-color:var(--leif)}
+.role.duo{border-color:var(--sonja)}
+.role ul{margin:0;padding-left:1.1rem;display:grid;gap:.3rem;font-size:.92rem}
+.role .rule{font-size:.86rem;padding:.55rem .75rem;border-radius:8px;background:var(--jan-soft);color:var(--ink)}
+.flowdiag{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;font-size:.85rem}
+.chip{padding:.25rem .6rem;border-radius:99px;font-weight:600;font-size:.82rem}
+.chip.l{background:var(--leif-soft);color:var(--leif)} .chip.s{background:var(--sonja-soft);color:var(--sonja)} .chip.j{background:var(--jan-soft);color:var(--jan)}
+.flowdiag .ar{font-family:var(--f-mono);color:var(--muted)}
+
+.tl-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1rem}
+.tl{min-width:780px;display:grid;grid-template-columns:8.5rem repeat(11,1fr);row-gap:.55rem}
+.tl .m{font-family:var(--f-mono);font-size:.7rem;color:var(--muted);text-align:center;padding-bottom:.3rem;border-bottom:1px solid var(--line)}
+.tl .lane{grid-column:1;font-weight:600;font-size:.88rem;align-self:center;display:flex;align-items:center;gap:.45rem}
+.tl .lane i{width:.7rem;height:.7rem;border-radius:3px;display:inline-block}
+.bar{align-self:center;border-radius:6px;padding:.35rem .5rem;font-size:.75rem;font-weight:500;line-height:1.25;min-width:0;overflow:hidden}
+.bar.l{background:var(--leif-soft);color:var(--leif);border-left:3px solid var(--leif)}
+.bar.s{background:var(--sonja-soft);color:var(--sonja);border-left:3px solid var(--sonja)}
+.bar.j{background:var(--jan-soft);color:var(--jan);border-left:3px solid var(--jan)}
+.bar.key{font-weight:700}
+.ms{align-self:center;justify-self:start;font-family:var(--f-mono);font-size:.68rem;padding:.2rem .45rem;border-radius:4px;background:var(--ink);color:var(--bg);white-space:nowrap}
+
+.brands{display:grid;grid-template-columns:repeat(auto-fit,minmax(21rem,1fr));gap:1rem}
+.brand{background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:1.2rem;display:grid;gap:.8rem;align-content:start}
+.brand.s{border-color:var(--sonja)} .brand.j{border-color:var(--jan)}
+.brand .tag{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+.brand.s .tag{color:var(--sonja)} .brand.j .tag{color:var(--jan)}
+.phases{display:grid;gap:.45rem}
+.ph{display:grid;grid-template-columns:6.5rem 1fr;gap:.7rem;font-size:.9rem;padding:.45rem 0;border-top:1px solid var(--line)}
+.ph .d{font-family:var(--f-mono);font-size:.74rem;color:var(--muted);padding-top:.1rem}
+.ph b{font-weight:600}
+.ph.big .d{color:var(--ink);font-weight:700}
+
+.challenge{display:grid;grid-template-columns:repeat(auto-fit,minmax(8.6rem,1fr));gap:.5rem}
+.wk{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.75rem;display:grid;gap:.3rem;align-content:start}
+.wk .n{font-family:var(--f-mono);font-size:.7rem;color:var(--jan)}
+.wk b{font-size:.88rem;line-height:1.3}
+.wk span{font-size:.78rem;color:var(--muted);line-height:1.35}
+.wk.fin{background:var(--jan);border-color:var(--jan)}
+.wk.fin .n,.wk.fin b,.wk.fin span{color:var(--bg)}
+
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(21rem,1fr));gap:1rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem;display:grid;gap:.7rem;align-content:start}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.86rem;min-width:20rem}
+th,td{text-align:left;padding:.45rem .5rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+td.c{text-align:center}
+.yes{color:var(--accent);font-weight:600} .must{color:var(--red);font-weight:700}
+.fix{display:grid;gap:.5rem}
+.fx{border-left:3px solid var(--red);padding:.4rem .75rem;background:var(--red-soft);border-radius:0 8px 8px 0;font-size:.88rem}
+.fx.w{border-color:var(--warn);background:var(--warn-soft)}
+.fx b{display:block}
+
+.ready{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:.7rem}
+.rd{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.9rem 1rem;display:grid;gap:.25rem}
+.rd b{font-family:var(--f-display);font-size:1.6rem;font-variant-numeric:tabular-nums;line-height:1}
+.rd span{font-size:.85rem;color:var(--muted)}
+footer{font-size:.82rem;color:var(--muted)}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Startkonzept · erarbeitet vom Team am 21.11.2026</div>
+  <h1>Sonja Dechert und Jan Wachter starten vorbereitet</h1>
+  <p class="lead">Beide Bücher liegen schon im Entwurf vor, und darin liegt unsere Stärke. Leser gewinnen wir zuerst, das Buch kommt danach. Am Starttag ist alles fertig. Leif Hartmann hilft als Testlabor und als großer Bruder.</p>
+  <div class="thesis">
+    <span class="old">Buch veröffentlichen</span><span class="arrow">→</span><span class="old">Leser suchen</span><span></span>
+    <b>Leser gewinnen</b><span class="arrow">→</span><b>Buch veröffentlichen</b><span></span>
+  </div>
+</header>
+
+<section>
+  <div class="head"><div class="eyebrow">Was schon fertig ist</div><h2>Der Vorrat liegt bereit</h2></div>
+  <div class="ready">
+    <div class="rd"><b>9</b><span>Posts für Sonjas Dezember, dazu ihre Startwoche</span></div>
+    <div class="rd"><b>10</b><span>Wochen Challenge für Jan, aus Kapitel 7 seines Buchs</span></div>
+    <div class="rd"><b>7</b><span>Kreuz-Reels „Seine Sicht, ihre Sicht“ für Leif und Sonja</span></div>
+    <div class="rd"><b>2</b><span>Instagram-Bios mit Highlights</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="head"><div class="eyebrow">Leif Hartmann</div><h2>Zwei Rollen für das einzige Konto, das schon läuft</h2></div>
+  <div class="roles">
+    <div class="role lab">
+      <h3>Testlabor · für Sonja und Jan</h3>
+      <div class="flowdiag"><span class="chip l">Leif testet</span><span class="ar">→</span><span>Erkenntnis-Log</span><span class="ar">→</span><span class="chip s">Sonja</span><span class="chip j">Jan</span></div>
+      <ul>
+        <li>Neue Formate, Uhrzeiten und Einstiege laufen zuerst bei Leif.</li>
+        <li>Was funktioniert, übernehmen die neuen Konten vom ersten Tag an.</li>
+        <li>Leifs Kontoaufbau mit Bio, Highlights, Antworten und Metricool-Ablauf ist die Vorlage.</li>
+      </ul>
+      <p class="rule"><b>Für Jan gilt:</b> Leif liefert nur Wissen und nie Sichtbarkeit. Es gibt keinen Post, keinen Hashtag und keine Erwähnung, die beide verbindet.</p>
+    </div>
+    <div class="role duo">
+      <h3>„Seine Sicht, ihre Sicht“ · nur mit Sonja</h3>
+      <div class="flowdiag"><span class="chip l">Leif</span><span class="ar">⇄</span><span class="chip s">Sonja</span><span class="muted">dieselbe leise Ehe, zwei Seiten des Sofas</span></div>
+      <ul>
+        <li><b>Dezember:</b> Story-Umfrage bei Leif: „Wollt ihr ihre Sicht lesen?“</li>
+        <li><b>12. Januar:</b> Leif stellt Sonjas Band 1 vor: „Jetzt gibt es ihre Seite.“</li>
+        <li><b>Valentinstag-Woche:</b> Doppel-Serie „Was ich ihr / ihm nie gesagt habe“</li>
+        <li><b>Dauerhaft:</b> Verweis im Nachwort und auf den Amazon-Autorenseiten, später ein Paket</li>
+      </ul>
+      <p class="muted" style="font-size:.86rem">Leif und Sonja empfehlen sich als Bücher, nie als befreundete Personen.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="head"><div class="eyebrow">Gesamtkalender</div><h2>Elf Monate auf einen Blick</h2></div>
+  <div class="tl-wrap">
+    <div class="tl" role="table" aria-label="Zeitplan November 2026 bis September 2027">
+      <span></span><span class="m">Nov</span><span class="m">Dez</span><span class="m">Jan</span><span class="m">Feb</span><span class="m">Mär</span><span class="m">Apr</span><span class="m">Mai</span><span class="m">Jun</span><span class="m">Jul</span><span class="m">Aug</span><span class="m">Sep</span>
+
+      <span class="lane" style="grid-row:2"><i style="background:var(--leif)"></i>Leif</span>
+      <div class="bar l" style="grid-row:2;grid-column:2 / 4">Rhythmus, Leserteam, Testlabor</div>
+      <div class="bar l key" style="grid-row:2;grid-column:4 / 6">Kreuzaktion mit Sonja</div>
+      <div class="bar l" style="grid-row:2;grid-column:6 / 13">Paket „Seine Sicht, ihre Sicht“, englischer Markt</div>
+
+      <span class="lane" style="grid-row:3"><i style="background:var(--sonja)"></i>Sonja</span>
+      <div class="bar s" style="grid-row:3;grid-column:2 / 3">Konten</div>
+      <div class="bar s" style="grid-row:3;grid-column:3 / 4">Vertrauen, Vorab-Leserinnen</div>
+      <div class="bar s key" style="grid-row:3;grid-column:4 / 7">Band 1 · Band 2 · Band 3</div>
+      <div class="bar s" style="grid-row:3;grid-column:7 / 13">Reihe, Newsletter, Taschenbuch-Paket</div>
+
+      <span class="lane" style="grid-row:4"><i style="background:var(--jan)"></i>Jan</span>
+      <div class="bar j" style="grid-row:4;grid-column:2 / 4">Datenschutz, Konten, Gegenlesen, Gestaltung</div>
+      <div class="bar j key" style="grid-row:4;grid-column:4 / 6">10-Wochen-Challenge</div>
+      <div class="bar j key" style="grid-row:4;grid-column:6 / 7">Buch</div>
+      <div class="bar j" style="grid-row:4;grid-column:7 / 12">Rezensionen, Newsletter, Reihe „BEREIT.“</div>
+      <div class="bar j key" style="grid-row:4;grid-column:12 / 13">Warntag</div>
+
+      <span class="lane muted" style="grid-row:5;font-weight:500;font-size:.78rem">Meilensteine</span>
+      <span class="ms" style="grid-row:5;grid-column:4">03.01. Jan · 12.01. Sonja 1</span>
+      <span class="ms" style="grid-row:5;grid-column:5">09.02. Sonja 2</span>
+      <span class="ms" style="grid-row:5;grid-column:6">08.03. Sonja 3 · 16.03. Jan</span>
+      <span class="ms" style="grid-row:5;grid-column:12">09.09. Warntag</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="head"><div class="eyebrow">Die Startpläne</div><h2>Jede Phase hat ein Ziel</h2></div>
+  <div class="brands">
+    <div class="brand s">
+      <span class="tag">Sonja Dechert · Reihe „Frau zu Frau“</span>
+      <h3>Drei Bände, drei Anlässe</h3>
+      <div class="phases">
+        <div class="ph"><span class="d">bis 30.11.</span><span><b>Konten einrichten:</b> Instagram, Facebook-Seite, Metricool</span></div>
+        <div class="ph"><span class="d">Dezember</span><span><b>Vertrauen:</b> 3 Posts pro Woche, keine Werbung. Ziel sind 150 Follower.</span></div>
+        <div class="ph"><span class="d">ab 15.12.</span><span><b>Vorab-Leserinnen:</b> 15–25 Frauen lesen Band 1 vorab, für Rezensionen am Starttag</span></div>
+        <div class="ph big"><span class="d">Di 12.01.</span><span><b>Band 1</b> „Er sitzt neben mir…“, Neujahr und Bilanz, Leif stellt sie vor</span></div>
+        <div class="ph big"><span class="d">Di 09.02.</span><span><b>Band 2</b> Wechseljahre, mit Valentinstag-Aktion zusammen mit Leif</span></div>
+        <div class="ph big"><span class="d">Mo 08.03.</span><span><b>Band 3</b> „Ab jetzt bin ich dran“ zum Weltfrauentag</span></div>
+      </div>
+    </div>
+    <div class="brand j">
+      <span class="tag">Jan Wachter · BEREIT. 2027</span>
+      <h3>Die Challenge ist der Weg zum Buch</h3>
+      <div class="phases">
+        <div class="ph"><span class="d">sofort</span><span><b>Datenschutz-Funde</b> im Manuskript beheben</span></div>
+        <div class="ph"><span class="d">bis 15.12.</span><span><b>Konten:</b> eigene E-Mail, Instagram, Facebook, eigenes Impressum</span></div>
+        <div class="ph"><span class="d">Dez.–Feb.</span><span><b>Fachliches Gegenlesen</b> der Kapitel zu Medizin, Feuerwehr und Bevölkerungsschutz, dazu die Gestaltung</span></div>
+        <div class="ph big"><span class="d">So 03.01.</span><span><b>Auftakt</b> zum Jahrestag des Berliner Blackouts</span></div>
+        <div class="ph big"><span class="d">04.01.–14.03.</span><span><b>10-Wochen-Challenge</b>, ein Schritt pro Woche. Ziel sind 500 Follower.</span></div>
+        <div class="ph big"><span class="d">Di 16.03.</span><span><b>Buchstart:</b> „Du hast den Vorrat. Hier ist der ganze Plan.“</span></div>
+        <div class="ph"><span class="d">Sep 2027</span><span><b>Warntag:</b> zweite Welle mit der Familien-Vorsorgewoche</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="head"><div class="eyebrow">Jan Wachter · #bereitin10wochen</div><h2>Die 10-Wochen-Challenge</h2><p class="muted">Sie folgt Woche für Woche dem Vorratsplan aus Kapitel 7 des Buchs, jeweils plus einem kleinen Schritt, der nichts mit Essen zu tun hat.</p></div>
+  <div class="challenge">
+    <div class="wk"><span class="n">Woche 1 · 04.01.</span><b>Wasser für 3 Tage</b><span>+ Taschenlampen</span></div>
+    <div class="wk"><span class="n">Woche 2 · 11.01.</span><b>Getreide, Nudeln, Reis</b><span>+ Radio</span></div>
+    <div class="wk"><span class="n">Woche 3 · 18.01.</span><b>Gemüse in Dosen</b><span>+ Dosenöffner ohne Strom</span></div>
+    <div class="wk"><span class="n">Woche 4 · 25.01.</span><b>Obst, Nüsse</b><span>+ Bargeldreserve</span></div>
+    <div class="wk"><span class="n">Woche 5 · 01.02.</span><b>Milchprodukte</b><span>+ Familienplan und Treffpunkt</span></div>
+    <div class="wk"><span class="n">Woche 6 · 08.02.</span><b>Eiweiß-Konserven</b><span>+ Dokumentenmappe</span></div>
+    <div class="wk"><span class="n">Woche 7 · 15.02.</span><b>Öl, Salz, Honig</b><span>+ Wärmezimmer</span></div>
+    <div class="wk"><span class="n">Woche 8 · 22.02.</span><b>Wasser auf 10 Tage</b><span>+ Notfalltoilette</span></div>
+    <div class="wk"><span class="n">Woche 9 · 01.03.</span><b>Besonderes und Schokolade</b><span>+ Hausapotheke (nach Fachprüfung)</span></div>
+    <div class="wk"><span class="n">Woche 10 · 08.03.</span><b>Inventur</b><span>+ Blackout-Probenacht</span></div>
+    <div class="wk fin"><span class="n">Finale · 16.03.</span><b>Buchstart BEREIT. 2027</b><span>Der ganze Plan</span></div>
+  </div>
+</section>
+
+<section class="two">
+  <div class="card">
+    <div class="eyebrow">Deine Aufgabe</div>
+    <h3>Konten einrichten</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Schritt</th><th>Sonja</th><th>Jan</th></tr></thead>
+      <tbody>
+        <tr><td>Eigene E-Mail-Adresse</td><td class="c yes">empfohlen</td><td class="c must">Pflicht</td></tr>
+        <tr><td>Instagram (Creator-Konto)</td><td class="c yes">@autorinsonjadechert</td><td class="c yes">Handle prüfen</td></tr>
+        <tr><td>Facebook-Seite</td><td class="c yes">ja</td><td class="c yes">ja</td></tr>
+        <tr><td>In Metricool verbinden</td><td class="c yes">ja</td><td class="c yes">ja</td></tr>
+        <tr><td>Impressum-Service</td><td class="c yes">mit Leif teilen</td><td class="c must">eigener</td></tr>
+        <tr><td>Pseudonym in KDP + Autorenseite</td><td class="c yes">ja</td><td class="c yes">ja</td></tr>
+        <tr><td>Bis wann</td><td class="c">30.11.</td><td class="c">15.12.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted" style="font-size:.85rem">Mögliche Kosten: Metricool-Tarif für mehrere Marken, Impressum-Service. Danach übernimmt das Team.</p>
+  </div>
+  <div class="card">
+    <div class="eyebrow">Vom Team gefunden</div>
+    <h3>Vor der Veröffentlichung beheben</h3>
+    <div class="fix">
+      <div class="fx"><b>Jan: echte E-Mail und Wohnort im Impressum</b>Deine Gmail-Adresse und „Frankfurt“ würden die Person hinter dem Pseudonym verraten. Ersetzen durch Impressum-Service und Jans eigene E-Mail.</div>
+      <div class="fx"><b>Jan: „@Andreas“ unter dem Titel</b>Personen-Erwähnung aus Google Docs. Vor dem Export entfernen.</div>
+      <div class="fx w"><b>Jan: Anhang „Fachlich gegengelesen“ ist leer</b>Ohne Fachprüfung keine Erste-Hilfe- und Sicherheitsratschläge veröffentlichen.</div>
+      <div class="fx w"><b>Alle: KI-Angabe bei KDP</b>Bei der Veröffentlichung wahrheitsgemäß angeben.</div>
+    </div>
+  </div>
+</section>
+
+<footer>Grundlage: Manuskripte im Drive (nur gelesen), Markenbibeln, Erkenntnis-Logs und Konkurrenzanalysen im Repository „autoren-agentur“. Ausführlich: konzepte/2026-11-21-startkonzept-sonja-jan.md. Alle Termine sind Vorschläge und gelten erst nach deiner Freigabe.</footer>
+</div>
