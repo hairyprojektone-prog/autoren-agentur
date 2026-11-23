@@ -109,7 +109,7 @@ footer{font-size:.82rem;color:var(--muted)}
 
 <div class="wrap">
 <header>
-  <div class="eyebrow">Leitstand · KW 47 · Stand 21.11.2026</div>
+  <div class="eyebrow">Leitstand · KW 48 · Stand 23.11.2026</div>
   <h1>Dein Team bei der Arbeit</h1>
   <p class="lead">22 Agenten arbeiten für deine drei Pseudonyme. Hier siehst du, wer was macht, was diese Woche erledigt wurde und wo das Team auf dich wartet. Tippe auf einen Agenten, um seine Arbeit zu sehen.</p>
 </header>
@@ -117,9 +117,9 @@ footer{font-size:.82rem;color:var(--muted)}
 <div class="strip">
   <div class="kpi"><b>22</b><span>Agenten im Team</span></div>
   <div class="kpi"><b id="k-done">0</b><span>haben diese Woche geliefert</span></div>
-  <div class="kpi"><b>3</b><span>Entscheidungen angenommen</span></div>
+  <div class="kpi"><b>1</b><span>Entscheidung wartet auf dich</span></div>
   <div class="kpi"><b>29</b><span>Posts und Challenge-Wochen vorbereitet</span></div>
-  <div class="kpi"><b>19</b><span>Konkurrenztitel im Blick</span></div>
+  <div class="kpi"><b>335</b><span>Reel-Aufrufe der ersten Woche</span></div>
 </div>
 
 <section style="display:grid;gap:1rem">
@@ -184,13 +184,8 @@ footer{font-size:.82rem;color:var(--muted)}
 </section>
 
 <section class="split">
-  <div class="card"><div class="eyebrow">Wichtigste Erkenntnisse KW 47</div>
-    <ul>
-      <li>5 von 6 Start-Reels gingen in 20 Minuten nachts raus. Ab jetzt gilt höchstens 1 Post pro Tag, um 10–11 oder um 18 Uhr.</li>
-      <li>Leifs Marktlücke: Kein anderes Buch erzählt die leise Ehe aus der Ich-Sicht eines Mannes.</li>
-      <li>Wechseljahre-Bücher 2026 kommen fast nur von Ärztinnen. Sonjas Platz ist „Freundin statt Ärztin“.</li>
-      <li>Der Name „Jan Wachter“ ist frei.</li>
-    </ul></div>
+  <div class="card"><div class="eyebrow">Wichtigste Erkenntnisse KW 48</div>
+    <ul><li>Problem-Reels erreichten ~100 Menschen, Buch-Reels nur 5–6. Ab jetzt gilt: Problem zuerst, Buch zuletzt.</li><li>65–80 % wischen in den ersten 3 Sekunden weg. Die Kernbotschaft steht künftig in Sekunde 1 als Text im Bild.</li><li>Erste 5-Sterne-Rezension bei Leif auf Amazon.</li><li>Vorrang: Sonjas Konten bis 30.11.</li></ul></div>
   <div class="card"><div class="eyebrow">Nächste Woche</div>
     <ul>
       <li>Reichweite der ersten 7 Reels auswerten</li>
@@ -205,18 +200,18 @@ footer{font-size:.82rem;color:var(--muted)}
 
 <script>
 const A=[
- {id:"ceo",n:"CEO",g:"ceo",s:"done",job:"Setzt Prioritäten und berichtet nur dir.",did:"Erster CEO-Bericht KW 47 mit Lage, 3 Erkenntnissen und 3 Entscheidungen. Vorrang: Leif Hartmann.",next:"Montag: Wochenbericht KW 48",out:"berichte/ceo/2026-KW47.md"},
+ {id:"ceo",n:"CEO",g:"ceo",s:"done",job:"Setzt Prioritäten und berichtet nur dir.",did:"CEO-Bericht KW 48: Vorrang Sonjas Konten, 1 Entscheidung (Amazon-Beschreibung Leif).",next:"Montag: Wochenbericht KW 48",out:"berichte/ceo/2026-KW47.md"},
  {id:"ml-leif",n:"Markenleitung Leif Hartmann",g:"brand",b:"leif",s:"done",job:"Hütet Stimme und Strategie von Leif.",did:"Markenbibel angelegt. Wochenziel: ruhiger Posting-Rhythmus und erste Rezensionen.",next:"Wochenziele KW 48 prüfen",out:"marken/leif-hartmann/markenbibel.md"},
- {id:"ml-sonja",n:"Markenleitung Sonja Dechert",g:"brand",b:"sonja",s:"wait",job:"Hütet Stimme und Strategie von Sonja.",did:"Markenbibel aus deinen Drive-Unterlagen erstellt. Startplan vorbereitet.",next:"Wartet auf deine Entscheidung zum Startplan",out:"marken/sonja-dechert/markenbibel.md"},
- {id:"ml-jan",n:"Markenleitung Jan Wachter",g:"brand",b:"jan",s:"wait",job:"Hütet die Marke Jan Wachter, streng getrennt von den anderen.",did:"Markenbibel aus der Krisenvorsorge-Recherche erstellt. Name geprüft: frei.",next:"Wartet auf deine Entscheidung zum Zeitplan",out:"marken/jan-wachter/markenbibel.md"},
+ {id:"ml-sonja",n:"Markenleitung Sonja Dechert",g:"brand",b:"sonja",s:"wait",job:"Hütet Stimme und Strategie von Sonja.",did:"Wartet auf Sonjas Konten (Frist 30.11.). Vorrat liegt bereit.",next:"Wartet auf deine Entscheidung zum Startplan",out:"marken/sonja-dechert/markenbibel.md"},
+ {id:"ml-jan",n:"Markenleitung Jan Wachter",g:"brand",b:"jan",s:"wait",job:"Hütet die Marke Jan Wachter, streng getrennt von den anderen.",did:"Wartet auf Datenschutz-Korrektur und Konten (Frist 15.12.).",next:"Wartet auf deine Entscheidung zum Zeitplan",out:"marken/jan-wachter/markenbibel.md"},
  {id:"radar",n:"Konkurrenz-Radar",g:"Marktforschung",s:"done",job:"Beobachtet die wichtigsten Konkurrenztitel und meldet Veränderungen.",did:"19 Konkurrenztitel für alle drei Marken erfasst, neue Wechseljahre-Bücher 2026 gefunden.",next:"Bestsellerränge direkt auf Amazon",out:"marken/*/konkurrenz.md"},
- {id:"detektiv",n:"Rezensions-Detektiv",g:"Marktforschung",s:"done",job:"Macht aus schlechten Konkurrenz-Rezensionen Verkaufsargumente.",did:"Leser-Kritik am Krisenvorsorge-Markt übernommen. Leifs Buch noch ohne Rezensionen.",next:"1–3-Sterne-Rezensionen der Top-5 lesen",out:"berichte/abteilungen/2026-11-21-erster-zyklus.md"},
+ {id:"detektiv",n:"Rezensions-Detektiv",g:"Marktforschung",s:"done",job:"Macht aus schlechten Konkurrenz-Rezensionen Verkaufsargumente.",did:"Erste 5-Sterne-Rezension bei Leif auf Amazon entdeckt.",next:"1–3-Sterne-Rezensionen der Top-5 lesen",out:"berichte/abteilungen/2026-11-21-erster-zyklus.md"},
  {id:"scout",n:"Trend- und Anlass-Scout",g:"Marktforschung",s:"done",job:"Sucht täglich Anlässe für Posts.",did:"Blackout-Krisenplan der Bundesnetzagentur gefunden. Großer Anlass für Jan: 3. Januar.",next:"Tägliche Suche",out:"berichte/abteilungen/2026-11-21-erster-zyklus.md"},
- {id:"stratege",n:"Content-Stratege",g:"Marketing-Maschine",s:"done",job:"Plant Themen und Wochenpläne.",did:"Wochenplan KW 48 für Leif mit Test „Vormittag gegen Abend“.",next:"Monatsplan Dezember",out:"inhalte/geplant/2026-KW48-leif-hartmann.md"},
- {id:"texter",n:"Texter & Reel-Autor",g:"Marketing-Maschine",s:"done",job:"Schreibt Captions und Reel-Skripte.",did:"2 Posts und 1 Story-Umfrage für Leif, zweisprachig DE/EN.",next:"Posts für KW 49",out:"inhalte/geplant/2026-KW48-leif-hartmann.md"},
- {id:"pub",n:"Veröffentlicher",g:"Marketing-Maschine",s:"wait",job:"Plant geprüfte Posts in Metricool zur besten Zeit ein.",did:"Beste Zeiten aus Metricool geholt: werktags 10–12 und 18 Uhr.",next:"Wartet auf Bilder aus der Kreativabteilung",out:"–"},
+ {id:"stratege",n:"Content-Stratege",g:"Marketing-Maschine",s:"done",job:"Plant Themen und Wochenpläne.",did:"Wochenplan KW 49 nach den neuen Erkenntnissen: Problem zuerst, Text in Sekunde 1.",next:"Monatsplan Dezember",out:"inhalte/geplant/2026-KW48-leif-hartmann.md"},
+ {id:"texter",n:"Texter & Reel-Autor",g:"Marketing-Maschine",s:"done",job:"Schreibt Captions und Reel-Skripte.",did:"3 Posts für KW 49 (Reel, Karussell, Advents-Reel).",next:"Posts für KW 49",out:"inhalte/geplant/2026-KW48-leif-hartmann.md"},
+ {id:"pub",n:"Veröffentlicher",g:"Marketing-Maschine",s:"wait",job:"Plant geprüfte Posts in Metricool zur besten Zeit ein.",did:"Wartet auf Bilder aus dem Drive für KW 48/49.",next:"Wartet auf Bilder aus der Kreativabteilung",out:"–"},
  {id:"community",n:"Community-Manager",g:"Marketing-Maschine",s:"ready",job:"Bereitet Antworten auf Kommentare vor und meldet heikle Nachrichten.",did:"Startbereit mit deinen Antwortvorlagen.",next:"Tägliche Schicht",out:"–"},
- {id:"analyst",n:"Performance-Analyst",g:"Marketing-Maschine",s:"done",job:"Misst, was funktioniert.",did:"Erste Instagram-Zahlen erfasst und Nacht-Posting als Problem erkannt.",next:"Auswertung der ersten 7 Reels",out:"marken/leif-hartmann/erkenntnis-log.md"},
+ {id:"analyst",n:"Performance-Analyst",g:"Marketing-Maschine",s:"done",job:"Misst, was funktioniert.",did:"Erste Reel-Zahlen: Problem-Reels ~100 Aufrufe, Buch-Reels 5–6. 65–80 % wischen in 3 Sek. weg.",next:"Auswertung der ersten 7 Reels",out:"marken/leif-hartmann/erkenntnis-log.md"},
  {id:"listing",n:"Listing-Optimierer",g:"Amazon-Shop",s:"ready",job:"Verbessert Amazon-Seiten, Schlüsselwörter und Kategorien.",did:"Eingeplant.",next:"Leifs Amazon-Seite prüfen",out:"–"},
  {id:"aktion",n:"Preis- & Aktionsplaner",g:"Amazon-Shop",s:"done",job:"Plant Buchstarts und Preisaktionen.",did:"Gestaffelten Startplan für Sonjas Reihe ausgearbeitet.",next:"Aktionskalender Dezember",out:"vorschlaege/2026-11-21-sonja-startplan.md"},
  {id:"aktuell",n:"Aktualitäts-Wächter",g:"Buch-Werkstatt",s:"ready",job:"Prüft Fakten in den Büchern auf den neuesten Stand.",did:"Bereit.",next:"Quartalsprüfung im Januar",out:"–"},
@@ -224,7 +219,7 @@ const A=[
  {id:"produkt",n:"Produktplaner",g:"Buch-Werkstatt",s:"ready",job:"Sucht neue Bücher und Formate.",did:"Ideen gesammelt: Paket „Seine Sicht, ihre Sicht“, Arbeitsheft für Jan.",next:"Quartalsbewertung im Januar",out:"–"},
  {id:"newsletter",n:"Newsletter & Lesergeschenk",g:"Leserbindung",s:"ready",job:"Baut E-Mail-Listen mit Gratis-Geschenken auf.",did:"Bereit.",next:"Konzept Lesergeschenke",out:"–"},
  {id:"leserteam",n:"Leserteam & Kooperationen",g:"Leserbindung",s:"wait",job:"Organisiert Vorab-Leser und findet Partner.",did:"Leserteam-Plan für Leif vorbereitet.",next:"Wartet auf deine Entscheidung; dann Podcast-Liste",out:"vorschlaege/2026-11-21-leif-rezensionen-impressum.md"},
- {id:"waechter",n:"Markenwächter",g:"Recht & Controlling",s:"done",job:"Prüft jeden Post vor der Veröffentlichung.",did:"3 Posts geprüft. Falschen Englisch-Link in 2 Reels gefunden.",next:"Tägliche Prüfung",out:"inhalte/geplant/2026-KW48-leif-hartmann.md"},
+ {id:"waechter",n:"Markenwächter",g:"Recht & Controlling",s:"done",job:"Prüft jeden Post vor der Veröffentlichung.",did:"Plan KW 49 geprüft, Selbstlob-Posts auf einen pro Monat begrenzt.",next:"Tägliche Prüfung",out:"inhalte/geplant/2026-KW48-leif-hartmann.md"},
  {id:"recht",n:"Rechts-Check",g:"Recht & Controlling",s:"done",job:"Achtet auf Impressum, Amazon-Regeln und Gesundheitsaussagen.",did:"Impressum für Instagram fehlt, KI-Angabe bei KDP beachten.",next:"Monatsprüfung",out:"berichte/abteilungen/2026-11-21-erster-zyklus.md"},
  {id:"controller",n:"Controller",g:"Recht & Controlling",s:"wait",job:"Wertet deine KDP-Verkaufsberichte aus.",did:"Noch kein KDP-Bericht vorhanden (Buch seit 20.11. erhältlich).",next:"Wartet auf KDP-Bericht Dezember (Anfang Januar)",out:"–"}
 ];

@@ -12,6 +12,16 @@ Format:
 
 ---
 
+## 2026-11-23 · Performance-Analyst
+- Erkenntnis: Reels über das Problem des Lesers (direkte Ansprache von Männern) erreichten je ~100 Personen, Reels über Buch/Autor („Es ist da“, „Ich bin Autor“) nur 5–6.
+- Beleg: Metricool, Reels vom 20.11. (111/103 vs. 6/5 Aufrufe)
+- Folge: Problem zuerst, Buch zuletzt. Höchstens ein Freude-/Selbstlob-Post pro Monat.
+
+## 2026-11-23 · Performance-Analyst
+- Erkenntnis: 65–80 % wischen in den ersten 3 Sekunden weg.
+- Beleg: Metricool „Reel Skip Rate“, alle 6 Reels vom 20.11.
+- Folge: Kernbotschaft in Sekunde 1 als Text im Bild.
+
 ## 2026-11-21 · Performance-Analyst
 - Erkenntnis: 5 von 6 Start-Reels wurden am 20.11. zwischen 23:05 und 23:25 Uhr im 5-Minuten-Takt veröffentlicht.
 - Beleg: Metricool-Planer, Brand 8206255
