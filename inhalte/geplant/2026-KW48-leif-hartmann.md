@@ -70,3 +70,8 @@ Status: Entwurf · geprüft ✅
 ## Hinweise des Markenwächters
 - Englischer Link immer: https://www.amazon.com/dp/B0HSC3YDYN
 - Keine weiteren Reels mehrfach am selben Abend.
+
+---
+
+## Nachtrag 23.11. (Performance-Analyst / Content-Stratege)
+Die ersten Zahlen zeigen: Problem-Einstiege erreichen Fremde, Buch-Einstiege nicht, und 65–80 % wischen in den ersten 3 Sekunden weg. Für Post 1 und 2 gilt daher: **erste Kachel bzw. erste Sekunde = direkte Ansprache als Text im Bild**, Buch erst am Ende. Post 2 erster Text im Bild ändern zu: „Wir reden jeden Tag. Nur nicht über uns.“
